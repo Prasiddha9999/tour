@@ -1,0 +1,51 @@
+body{
+    background-color: rgb(77, 129, 196); 
+}
+.head{
+    text-align: center;
+    color: aliceblue;
+}
+.titles{
+    color: aliceblue;
+}
+.Packagebox{
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 1%;
+    font-style:italic;
+    box-shadow: inset;
+    display:grid;
+    position:relative;
+    display: grid;
+    gap: 50 px;
+    grid-template-columns: auto auto auto;
+    background-color: #fdfdfd;
+    padding: 10px;
+}
+.container{
+    margin-left: 20%;
+}
+.imgbox{
+text-align: right;
+padding-left: 60%;
+background-color: brown;
+width:fit-content;
+}
+.detail{
+    background-color: aqua;
+    text-decoration: none;
+    margin:3%;
+    text-align: center;
+    padding:2%;
+    border-radius: 10%;
+    width: 50px;
+}
+.apply{
+    background-color: aqua;
+    text-decoration: none;
+    margin:3%;
+    text-align: center;
+    padding:2%;
+    border-radius: 10%;
+    width: 50px;
+}
