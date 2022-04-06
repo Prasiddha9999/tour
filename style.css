@@ -6,7 +6,7 @@ body{
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-	background-image: url(back.jpg);
+	background-color: #11567e;
 }
 .header{
 	size:50px;
@@ -94,7 +94,7 @@ button:hover{
 	transition: .8s ease-in-out;
 }
 .signup label{
-	color: #573b8a;
+	color: #05273b;
 	transform: scale(.6);
 }
 
