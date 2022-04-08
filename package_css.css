@@ -16,6 +16,8 @@
 .container{
   margin-top:10%;
   
+
+  
   
 
 }
@@ -76,4 +78,18 @@ button{
   font-size: 15px;
   margin-left: 33%;
   
+}
+.container-a{
+  background-color:rgb(61, 61, 61);
+  width:17%;
+  height:500px;
+  position: absolute;
+  padding:1%;
+  font-size: 20px;
+  text-decoration: none;
+  color: aliceblue;
+}
+a:link{
+  text-decoration: none;
+  color: aliceblue;
 }

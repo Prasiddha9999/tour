@@ -1,12 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<title>Package List</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="package-list.css" rel='stylesheet' type='text/css' />
 </head>
 <body>
-    <h1>HOME PAGE AFTER LOGGING IN</h1>
+	<div class="containerh">
+	<div class="containera">
+		<li class="side"><a href="home.php">Home</a>&nbsp &nbsp</li>
+		<li class="side"><a href="package-list.html">Manage Package</a>&nbsp &nbsp</li>
+		<li class="side"><a href="package.html">Create Package</a>&nbsp &nbsp</li>
+	</div>
+
+	<div class="container-b">
+	&nbsp &nbsp &nbspWelcome
+	 <br>
+	 Comming Soon
+	</div>
+	<div><p class="logout"><a href="login.php">Logout</a>&nbsp &nbsp</p></div>
+	<style>
+		body{
+			background-image:url("back.jpg");
+		}
+		.containerh{
+    font-size: 100px;
+	display:grid;
+    grid-template-columns: 30% 60% 10%; 
+	gap:5px;
+	color:white;
+
+}
+.containera{
+    background-color:rgb(61, 61, 61);
+    width:70%;
+    height:700px;
+    padding:1%;
+    font-size: 20px;
+    text-decoration: none;
+    color: aliceblue;
+}
+.logout{
+	font-size:25px;
+	color:white;
+
+}
+		</style>
+
+</div>
 </body>
 </html>

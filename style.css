@@ -6,7 +6,9 @@ body{
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-	background-color: #11567e;
+	background-image:url("front.jpg");
+	background-repeat: no-repeat;
+	
 }
 .header{
 	size:50px;
@@ -106,4 +108,12 @@ button:hover{
 }
 #chk:checked ~ .login label{
 	transform: scale(.6);
+}
+.error {
+    color: rgb(200, 48, 48);
+    position: ABSOLUTE;
+    margin-top: 46%;
+    width: 100%;
+	text-align:center ;
+   
 }

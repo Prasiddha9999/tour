@@ -39,7 +39,7 @@ if (isset($_POST['login_user'])) {
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: home.php');
   	}else {
-  		array_push($errors, "Wrong username/password combination");
+  		 array_push($errors, "Username or password wrong");
   	}
   }
 }

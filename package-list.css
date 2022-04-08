@@ -1,12 +1,12 @@
 body{
-    background-color: rgb(77, 129, 196); 
+    background-color: rgba(226, 230, 236, 0.907); 
 }
 .head{
     text-align: center;
-    color: aliceblue;
+    color: rgb(85, 36, 199);
 }
 .titles{
-    color: aliceblue;
+    color: rgb(0, 0, 0);
 }
 .Packagebox{
     background-color: aliceblue;
@@ -18,21 +18,15 @@ body{
     position:relative;
     display: grid;
     gap: 50 px;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 27% 50% 23%;
     background-color: #fdfdfd;
     padding: 10px;
 }
-.container{
+.container-b{
     margin-left: 20%;
 }
-.imgbox{
-text-align: right;
-padding-left: 60%;
-background-color: brown;
-width:fit-content;
-}
 .detail{
-    background-color: aqua;
+    background-color: rgb(26, 126, 203);
     text-decoration: none;
     margin:3%;
     text-align: center;
@@ -41,11 +35,34 @@ width:fit-content;
     width: 50px;
 }
 .apply{
-    background-color: aqua;
+    background-color: rgb(26, 126, 203);
     text-decoration: none;
     margin:3%;
     text-align: center;
     padding:2%;
     border-radius: 10%;
     width: 50px;
+}
+.packageimg{
+    width:300px;
+    height:200px;
+    
+}
+.container{
+    grid-template-columns: 20% 80%; 
+   
+}
+.container-a{
+    background-color:rgb(61, 61, 61);
+    width:17%;
+    height:700px;
+    position: absolute;
+    padding:1%;
+    font-size: 20px;
+    text-decoration: none;
+    color: aliceblue;
+}
+a:link{
+    text-decoration: none;
+    color: aliceblue;
 }
