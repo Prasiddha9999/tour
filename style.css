@@ -1,13 +1,14 @@
-body{
-	margin: 0;
-	padding: 0;
+
+.container{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-height: 100vh;
+	min-height: 98vh;
 	font-family: 'Jost', sans-serif;
-	background-image:url("front.jpg");
 	background-repeat: no-repeat;
+	margin: -2%;
+	background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(17,78,210,0.9699230033810399) 0%, rgba(9,187,200,0.9839286056219363) 53%, rgba(0,212,255,1) 100%);
 	
 }
 .header{
@@ -22,7 +23,7 @@ body{
 	margin-top: 5%;
 	width: 450px;
 	height: 600px;
-	background-image: url(back_main.jpg);
+	background-image: url(image/back_main.jpg);
 	background-repeat: no-repeat;
 	overflow: hidden;
 	border-radius: 10px;
@@ -115,5 +116,11 @@ button:hover{
     margin-top: 46%;
     width: 100%;
 	text-align:center ;
-   
+}
+.backbtn{
+text-decoration: none;	
+text-align: right;
+font-size: 20px;
+color: #052cee;
+font-weight: 100px;
 }

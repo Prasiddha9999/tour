@@ -14,12 +14,15 @@
 					<?php include('error.php');?>
 					
 					<div class="container">
-        <div class="first"><img src="logo.png"></div><div class="firsts">Up And Away</div>
+        <div class="first"><img src="image/logo.png"></div><div class="firsts">Up And Away</div>
         <div class="second">
             <p class="secondtexta">Up And Away</p>
             <p class="secondtextb">Booking Travels made just got easier</p>
         </div>
+        <div class="bothlogin">
+        <div class="third"><button type="submit" class="admin" name="login_page"><a href="admin.html" class="admintext">Admin</a></button></div>
         <div class="third"><button type="submit" class="btn" name="login_page">Login or Signup</button></div>
+        </div>
         <div class="fourth">
             <p class="secondtextc">Explore Nepal</p>
             <p class="secondtextd">Beautifull place to explore</p>
@@ -96,7 +99,7 @@ img{
     margin-top:-35px;
     width:100%;
     height: 300px;
-    background-image: url('second.jpg');
+    background-image: url('image/second.jpg');
     background-repeat: no-repeat;
    filter: brightness(0.20);
 }
@@ -105,8 +108,11 @@ img{
     height: 30px;
     
 }
+.bothlogin{
+    display:flex;
+}
 .btn{
-    margin-left:85%;
+    margin-left:75%;
     margin-top:17px;
     border: 2px solid rgb(245, 82, 228);
     background-color: rgb(247, 247, 247);
@@ -115,10 +121,23 @@ img{
     box-shadow: 2px 2px 3px 3px rgb(206, 176, 206);
     border-radius: 5px;
 }
+.admin{
+    margin-left:5%;
+    margin-top:17px;
+    border: 2px solid rgb(245, 82, 228);
+    background-color: rgb(247, 247, 247);
+    color:rgb(246, 21, 242);
+    font-size: 15px;
+    box-shadow: 2px 2px 3px 3px rgb(206, 176, 206);
+    border-radius: 5px;
+}
+    .admintext{
+    text-decoration: none;
+}
 .fourth{
     width:100%;
     height: 150px;
-    background-image: url('fourth.jpg'); 
+    background-image: url('image/fourth.jpg'); 
     filter: brightness(0.60);
 }
 .gap{
@@ -128,25 +147,25 @@ img{
 .imga{
     width:80%;
     height: 250px;
-    background-image: url('imga.jpg'); 
+    background-image: url('image/imga.jpg'); 
     margin-left:10%;
 }
 .imgb{
     width:80%;
     height: 250px;
-    background-image: url('imgb.jpg'); 
+    background-image: url('image/imgb.jpg'); 
     margin-left:10%;
 }
 .imgc{
     width:80%;
     height: 250px;
-    background-image: url('imgc.jpg'); 
+    background-image: url('image/imgc.jpg'); 
     margin-left:10%;
 }
 .imgd{
     width:80%;
     height: 250px;
-    background-image: url('imgd.jpg'); 
+    background-image: url('image/imgd.jpg'); 
     margin-left:10%;
 }
 .containera{
@@ -216,6 +235,9 @@ hr.line{
   box-shadow: 0 12px 16px 0 rgba(235, 14, 243, 0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 .btn:hover {
+  box-shadow: 0 12px 16px 0 rgba(235, 14, 243, 0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.admin:hover {
   box-shadow: 0 12px 16px 0 rgba(235, 14, 243, 0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
     </style>
