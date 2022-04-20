@@ -1,7 +1,7 @@
 <?php
+
 require('db_conn.php');
 require('error.php');
-
 // initializing variables
 $errors = array();
 
@@ -15,7 +15,7 @@ if (isset($_POST['package_submit'])) {
     $pacFeatures = mysqli_real_escape_string($db, $_POST['package_features']);
     $pacDetails = mysqli_real_escape_string($db, $_POST['package_details']);
 
-    // form validation: ensure that the form is correctly filled ...
+    // form validation: ensure that the form is correctly filled
     // by adding (array_push()) corresponding error unto $errors array
     if (empty($pacName)) { array_push($errors, "Package Name is required"); }
     if (empty($pacType)) { array_push($errors, "Package Type is required"); }
@@ -23,7 +23,6 @@ if (isset($_POST['package_submit'])) {
     if (empty($pacPrice)) { array_push($errors, "Package Price is required"); }
     if (empty($pacFeatures)) { array_push($errors, "Package Features is required"); }
     if (empty($pacDetails)) { array_push($errors, "Package Details is required"); }
-    if (empty($pacImage)) { array_push($errors, "Package Details is required"); }
 
         // first check the database to make sure 
     // Package does not already exist with the same name and location
@@ -33,7 +32,7 @@ if (isset($_POST['package_submit'])) {
     $user = mysqli_fetch_assoc($result);
     
     if ($user) { // if package already exists
-      if ($user['pac_name'] === $pacName) {
+      if ($user['package_name'] === $pacName) {
         array_push($errors, "The package you are trying to create already exists");
       }
   
@@ -45,17 +44,17 @@ if (isset($_POST['package_submit'])) {
     // Storing Image
     $pacImage = $_FILES['package_image'];
     $imageName = $pacImage['name']; //displaying name
-  
-    //Checking image file error
-    $imageError = $pacImage['error'];
 
     //Stroing image temproraly
     $imageTmp = $pacImage['tmp_name'];
 
+    //checking for error
+    $imageError =$pacImage['error'];
+
     //Checking image extension
     $imageExt = explode('.',$imageName); #spliting the image into two part
     $imageCheck = strtolower(end($imageExt)); #lowering the letters in extension
-    
+
     //Choosing the extensions
     $imageExtstored = array('png','jpg','jpeg');
 
@@ -70,38 +69,42 @@ if (isset($_POST['package_submit'])) {
 
         echo "<SCRIPT>
         alert('$message');
-        </SCRIPT>"; 
+        </SCRIPT>";
 
     }
 
     // Finally, create package if there are no errors in the form
     if (count($errors) == 0) {  
-        $query = "INSERT INTO create_package (pac_name, pac_type,pac_location,pac_price,pac_features,pac_details,pac_image) 
+        $query = "INSERT INTO create_package(pac_name, pac_type,pac_location,pac_price,pac_features,pac_details,pac_image) 
                   VALUES('$pacName', '$pacType', '$pacLocation', '$pacPrice', '$pacFeatures','$pacDetails','$destinationFile')";
-        mysqli_query($db, $query);
+        $query = mysqli_query($db, $query);
         $_SESSION['package_name'] = $pacName;
-        $message = 'You have successfully created a package';
+        $_SESSION['success'] = "Your package is created";
+        header('location: package-list.php');
 
-        echo "<SCRIPT>
-        alert('$message');
-        </SCRIPT>";
-        header('location: package.php');
+        $displayquery = "SELECT * FROM create_package"; //retriving image from database
+        $result = mysqli_query($db,$displayquery);
+        $resultCheck = mysqli_num_rows($result);
 
-        $displayquery = "SELECT * FROM create_package"; //retriving image database
-        $querydisplay = mysqli_query($db,$displayquery);
+    if($resultCheck > 0){
+      while( $row = mysqli_fetch_assoc($result)){
+        ?>
+        <tr>
+        <td><?php echo $row['pac_name']; ?></td>
+        <td><?php echo $row['pac_type'];?></td>
+        <td><?php echo $row['pac_location'];?></td>
+        <td><?php echo $row['pac_price'];?></td>
+        <td><?php echo $row['pac_features'];?></td>
 
-        // $row = mysqli_num_rows($querydisplay);
-        while( $res = mysqli_fetch_array($querydisplay)){
-            echo $res['pac_name'];
-            echo $res['pac_type'];
-            echo $res['pac_location'];
-            echo $res['pac_price'];
-            echo $res['pac_features'];
-            echo $res['pac_details'];
-            echo $res['pac_image'];
+        </tr>
+        
+        <?php
+      }
 
-        }
     }
+
+    }
+   
   }
 
 ?>

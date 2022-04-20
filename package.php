@@ -1,5 +1,6 @@
 <?php
 require('create_pac.php');
+require('error.php');
 ?>
 <!DOCTYPE HTML>
 <html>
