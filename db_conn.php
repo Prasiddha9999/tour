@@ -19,9 +19,13 @@ if (isset($_POST['login_page'])) {
 
   header('location: login.php');
 }
-if (isset($_POST['signup_page'])) {
+if (isset($_POST['book_page'])) {
 
   header('location: login.php');
+}
+if (isset($_POST['admin_page'])) {
+
+  header('location: admin.php');
 }
 // LOGIN Admin
 if (isset($_POST['admin_log'])) {

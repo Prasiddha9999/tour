@@ -20,7 +20,7 @@
             <p class="secondtextb">Booking Travels made just got easier</p>
         </div>
         <div class="bothlogin">
-        <div class="third"><button type="submit" class="admin" name="login_page"><a href="admin.php" class="admintext">Admin</a></button></div>
+        <div class="third"><button type="submit" class="admin" name="admin_page"><a href="admin.php" class="admintext">Admin</a></button></div>
         <div class="third"><button type="submit" class="btn" name="login_page">Login or Signup</button></div>
         </div>
         <div class="fourth">
@@ -67,7 +67,7 @@
         <div class="questiontext">Hello wellcome our system</div>
         <br>
         <hr class="line">
-        <div class="third"><button type="submit" class="book" name="login_page">Book Now</button></div>
+        <div class="third"><button type="submit" class="book" name="book_page">Book Now</button></div>
         <hr class="line">
     </div>
     <style>

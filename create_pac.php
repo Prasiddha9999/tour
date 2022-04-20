@@ -2,6 +2,9 @@
 require('db_conn.php');
 require('error.php');
 
+// initializing variables
+$errors = array();
+
 // Create Package
 if (isset($_POST['package_submit'])) {
     // receive all input values from the form
@@ -24,17 +27,17 @@ if (isset($_POST['package_submit'])) {
 
         // first check the database to make sure 
     // Package does not already exist with the same name and location
-    $user_check_query = "SELECT * FROM create_package WHERE pac_name='$pacName' AND pac_location='$pacLocation' LIMIT 1";
+    $user_check_query = "SELECT * FROM create_package WHERE pac_name='$pacName' OR pac_location='$pacLocation' LIMIT 1";
   
     $result = mysqli_query($db, $user_check_query);
     $user = mysqli_fetch_assoc($result);
     
     if ($user) { // if package already exists
-      if ($user['package_name'] === $pacName) {
+      if ($user['pac_name'] === $pacName) {
         array_push($errors, "The package you are trying to create already exists");
       }
   
-      if ($user['package_location'] === $pacLocation) {
+      if ($user['pac_location'] === $pacLocation) {
         array_push($errors, "The package location already exists");
       }
     }
