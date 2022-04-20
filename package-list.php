@@ -1,5 +1,6 @@
 <?php
 require('create_pac.php');
+require('error.php');
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -27,7 +28,7 @@ require('create_pac.php');
 					<img src=" <?php echo $res['pac_image']; ?>" class="packageimg" alt="Image will come after insert image">
 				</div>
 					<div class="Package-detail">
-							<h4>Package Name:></h4>
+							<h4>Package Name:<?php echo $res['pac_name'];?></h4>
 							<h5>Package Type :</h5>
 							<p><b>Package Location : </p>
 							<p><b>Features</b>: </p>

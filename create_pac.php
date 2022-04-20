@@ -12,6 +12,33 @@ if (isset($_POST['package_submit'])) {
     $pacFeatures = mysqli_real_escape_string($db, $_POST['package_features']);
     $pacDetails = mysqli_real_escape_string($db, $_POST['package_details']);
 
+    // form validation: ensure that the form is correctly filled ...
+    // by adding (array_push()) corresponding error unto $errors array
+    if (empty($pacName)) { array_push($errors, "Package Name is required"); }
+    if (empty($pacType)) { array_push($errors, "Package Type is required"); }
+    if (empty($pacLocation)) { array_push($errors, "Package Location is required"); }
+    if (empty($pacPrice)) { array_push($errors, "Package Price is required"); }
+    if (empty($pacFeatures)) { array_push($errors, "Package Features is required"); }
+    if (empty($pacDetails)) { array_push($errors, "Package Details is required"); }
+    if (empty($pacImage)) { array_push($errors, "Package Details is required"); }
+
+        // first check the database to make sure 
+    // Package does not already exist with the same name and location
+    $user_check_query = "SELECT * FROM create_package WHERE pac_name='$pacName' AND pac_location='$pacLocation' LIMIT 1";
+  
+    $result = mysqli_query($db, $user_check_query);
+    $user = mysqli_fetch_assoc($result);
+    
+    if ($user) { // if package already exists
+      if ($user['package_name'] === $pacName) {
+        array_push($errors, "The package you are trying to create already exists");
+      }
+  
+      if ($user['package_location'] === $pacLocation) {
+        array_push($errors, "The package location already exists");
+      }
+    }
+    
     // Storing Image
     $pacImage = $_FILES['package_image'];
     $imageName = $pacImage['name']; //displaying name
@@ -33,42 +60,28 @@ if (isset($_POST['package_submit'])) {
     if(in_array($imageCheck,$imageExtstored)){
         $destinationFile = 'upload/'.$imageName; #Saving image to local folder
         move_uploaded_file($imageTmp,$destinationFile); #Moving tmproary file to folder
+
+    }
+    else{
+        $message = 'Incorrect image format.';
+
+        echo "<SCRIPT>
+        alert('$message');
+        </SCRIPT>"; 
+
     }
 
-    // form validation: ensure that the form is correctly filled ...
-    // by adding (array_push()) corresponding error unto $errors array
-    if (empty($pacName)) { array_push($errors, "Package Name is required"); }
-    if (empty($pacType)) { array_push($errors, "Package Type is required"); }
-    if (empty($pacLocation)) { array_push($errors, "Package Location is required"); }
-    if (empty($pacPrice)) { array_push($errors, "Package Price is required"); }
-    if (empty($pacFeatures)) { array_push($errors, "Package Features is required"); }
-    if (empty($pacDetails)) { array_push($errors, "Package Details is required"); }
-    if (empty($pacImage)) { array_push($errors, "Package Details is required"); }
-
-    // first check the database to make sure 
-    // Package does not already exist with the same name and location
-    $user_check_query = "SELECT * FROM create_package WHERE pac_name='$pacName' AND pac_location='$pacLocation' LIMIT 1";
-  
-    $result = mysqli_query($db, $user_check_query);
-    $user = mysqli_fetch_assoc($result);
-    
-    if ($user) { // if package already exists
-      if ($user['package_name'] === $pacName) {
-        array_push($errors, "The package you are trying to create already exists");
-      }
-  
-      if ($user['package_location'] === $pacLocation) {
-        array_push($errors, "The package location already exists");
-      }
-    }
-  
     // Finally, create package if there are no errors in the form
     if (count($errors) == 0) {  
         $query = "INSERT INTO create_package (pac_name, pac_type,pac_location,pac_price,pac_features,pac_details,pac_image) 
                   VALUES('$pacName', '$pacType', '$pacLocation', '$pacPrice', '$pacFeatures','$pacDetails','$destinationFile')";
         mysqli_query($db, $query);
         $_SESSION['package_name'] = $pacName;
-        $_SESSION['success'] = "You have successfully created a package";
+        $message = 'You have successfully created a package';
+
+        echo "<SCRIPT>
+        alert('$message');
+        </SCRIPT>";
         header('location: package.php');
 
         $displayquery = "SELECT * FROM create_package"; //retriving image database
