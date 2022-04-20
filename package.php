@@ -1,0 +1,91 @@
+<?php
+require('create_pac.php');
+?>
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Package Create</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="package_css.css" rel='stylesheet' type='text/css' />
+</head> 
+<body>
+   <div class="container">
+<div class="left-con">
+	<div class="top-back">
+                <li class="top-back-items"><a href="home.php">Home</a>&nbsp &nbsp Create Package</li>
+	</div>
+		
+ 	<div class="container">
+  	       
+  	         <div class="tab-content">
+				<form action="package.php" class="forms" name="package" method="POST" enctype="multipart/form-data">
+					<h3>Create Package</h3>
+					<div class="form-group">
+						
+						<label for="focusedinput" class="tit">Package Name</label>
+							<div class="input-text">
+								<input type="text" class="form-text" name="package_name" id="packagename" placeholder="Create Package" required>
+							</div>
+					</div>
+					<div class="form-group">
+						<label for="focusedinput" class="tit">Package Type</label>
+							<div class="input-text">
+								<input type="text" class="form-text" name="package_type" id="packagetype" placeholder=" Package Type" required>
+							</div>
+					</div>
+
+					<div class="form-group">
+						<label for="focusedinput" class="tit">Package Location</label>
+							<div class="input-text">
+								<input type="text" class="form-text" name="package_location" id="packagelocation" placeholder=" Package Location" required>
+							</div>
+					</div>
+
+					<div class="form-group">
+						<label for="focusedinput" class="tit">Package Price in NPR</label>
+							<div class="input-text">
+								<input type="text" class="form-text" name="package_price" id="packageprice" placeholder=" Package Price in NPR" required>
+							</div>
+					</div>
+
+					<div class="form-group">
+						<label for="focusedinput" class="tit">Package Features</label>
+							<div class="input-text">
+								<input type="text" class="form-text" name="package_features" id="packagefeatures" placeholder="Package Features" required>
+							</div>
+					</div>		
+
+
+					<div class="form-group">
+						<label for="focusedinput" class="tit">Package Details</label>
+							<div class="input-text">
+								<textarea class="form-text" rows="5" cols="50" name="package_details" id="packagedetails" placeholder="Package Details" required></textarea> 
+							</div>
+					</div>		
+
+					<div class="form-group">
+						<label for="focusedinput" class="tit">Package Image</label>
+							<div class="imgs">
+								<input type="file" name="package_image" id="packageimage" required>
+							</div>
+					</div>	
+
+					<div class="row">
+						<div class="button">
+							<button type="submit" name="package_submit" class="btn-primary btn">Create</button>
+						</div>
+					</div>			
+				</form>
+  
+	 		</div>
+ 	</div>
+</div>
+<br><br><br>
+</div>	
+</div>
+
+ 
+
+</body>
+</html>

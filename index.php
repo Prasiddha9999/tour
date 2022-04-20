@@ -10,17 +10,17 @@
 <body>
 			<div class="login">
 				
-				<form method="post" action="db_conn.php">
+				<form method="post" action="">
 					<?php include('error.php');?>
 					
 					<div class="container">
-        <div class="first"><img src="image/logo.png"></div><div class="firsts">Up And Away</div>
+        <div class="first"><img src="image/logo.png"></div><div class="firsts">Neptravels</div>
         <div class="second">
-            <p class="secondtexta">Up And Away</p>
+            <p class="secondtexta">Neptravels</p>
             <p class="secondtextb">Booking Travels made just got easier</p>
         </div>
         <div class="bothlogin">
-        <div class="third"><button type="submit" class="admin" name="login_page"><a href="admin.html" class="admintext">Admin</a></button></div>
+        <div class="third"><button type="submit" class="admin" name="login_page"><a href="admin.php" class="admintext">Admin</a></button></div>
         <div class="third"><button type="submit" class="btn" name="login_page">Login or Signup</button></div>
         </div>
         <div class="fourth">

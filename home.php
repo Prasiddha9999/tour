@@ -9,8 +9,8 @@
 	<div class="containerh">
 	<div class="containera">
 		<li class="side"><a href="home.php">Home</a>&nbsp &nbsp</li>
-		<li class="side"><a href="package-list.html">Manage Package</a>&nbsp &nbsp</li>
-		<li class="side"><a href="package.html">Create Package</a>&nbsp &nbsp</li>
+		<li class="side"><a href="package-list.php">Manage Package</a>&nbsp &nbsp</li>
+		<li class="side"><a href="package.php">Create Package</a>&nbsp &nbsp</li>
 	</div>
 
 	<div class="container-b">
@@ -18,7 +18,7 @@
 	 <br>
 	 Comming Soon
 	</div>
-	<div><p class="logout"><a href="login.php">Logout</a>&nbsp &nbsp</p></div>
+	<div><p class="logout"><a href="index.php">Logout</a>&nbsp &nbsp</p></div>
 	<style>
 		body{
 			background-image:url("back.jpg");

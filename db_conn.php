@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 // initializing variables
 $username = "";
@@ -7,7 +6,13 @@ $email    = "";
 $errors = array();
 
 // connect to the database
-$db = mysqli_connect('localhost', 'root', '', 'tour_db');
+$db = mysqli_connect('localhost', 'root', '', 'travel_db');
+
+//checking connection
+if(mysqli_connect_error())
+{
+  echo "Cannot connect";
+}
 
 //index page setup up
 if (isset($_POST['login_page'])) {
@@ -18,6 +23,32 @@ if (isset($_POST['signup_page'])) {
 
   header('location: login.php');
 }
+// LOGIN Admin
+if (isset($_POST['admin_log'])) {
+  $email = mysqli_real_escape_string($db, $_POST['admin_name']);
+  $password = mysqli_real_escape_string($db, $_POST['admin_pass']);
+
+  if (empty($email)) {
+      array_push($errors, "Email is required");
+  }
+  if (empty($password)) {
+      array_push($errors, "Password is required");
+  }
+
+  if (count($errors) == 0) {
+      $query ="SELECT * FROM admin_login WHERE admin_name='$email' AND admin_pass='$password'";        
+      $results = mysqli_query($db, $query);
+      if (mysqli_num_rows($results) == 1) {
+        $_SESSION['email'] = $email;
+        $_SESSION['success'] = "You are now logged in";
+        header('location: home.php');
+      }
+      else {
+           array_push($errors, "Username or password wrong");
+      }
+  }
+}
+
 // LOGIN USER
 if (isset($_POST['login_user'])) {
   $email = mysqli_real_escape_string($db, $_POST['username']);
@@ -90,5 +121,6 @@ if (isset($_POST['reg_user'])) {
       header('location: login.php');
   }
 }
+
 
 ?>

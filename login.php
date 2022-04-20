@@ -19,8 +19,8 @@
 					
 					<label>Login</label>
 					<img src="image/login_img.png" alt="Tour Management System" class="login_img">	
-					<input type="email"  name="username" placeholder="Email"  required="">
-					<input type="password"  name="password" placeholder="Password" required="" >
+					<input type="email"  name="username" placeholder="Email"  >
+					<input type="password"  name="password" placeholder="Password" >
 					<button type="submit" class="btn" name="login_user">Login</button>
 					
 				</form>
