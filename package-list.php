@@ -1,7 +1,6 @@
 <?php
 require('create_pac.php');
 require('error.php');
-require('db_conn.php')
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -25,24 +24,17 @@ require('db_conn.php')
 			<li class="top-back-items"><a href="home.php">Home</a>&nbsp &nbsp Manage Package</li>
 		</div>
 			<div class="Packagebox">
-				<!-- <div class="imgbox">
-					<img src="" class="packageimg" alt="Image will come after insert image">
-				</div> -->
+				<div class="imgbox">
+					<img src=" <?php echo $res['pac_image']; ?>" class="packageimg" alt="Image will come after insert image">
+				</div>
 					<div class="Package-detail">
-						<table algin="center" border ="1px" style="width:300px; line-height:30px;">
-							<tr>
-								<t>
-							<th><h4>Package Name</h4></th>
-							<th><h4>Package Type<h4></th>
-							<th><h4>Package Location <h4></th>
-							<th><h4>Features<h4></th>
-							<th><h4>NPR <h4>
-</t>
-							</tr>
-</table>
+							<h4>Package Name:<?php echo $res['pac_name'];?></h4>
+							<h5>Package Type :</h5>
+							<p><b>Package Location : </p>
+							<p><b>Features</b>: </p>
 					</div>
 						<div class="price">
-							
+							<h5>NPR </h5>
 						</div>
 						<div class="detail"> 
 							<a href="#" class="viewdetail">Edit</a>

@@ -1,52 +1,74 @@
-<!DOCTYPE HTML>
+<?php
+require('create_pac.php');
+require('error.php');
+?>
+
+<!Doctype HTML>
 <html>
 <head>
-<title>Package List</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="package-list.css" rel='stylesheet' type='text/css' />
+	<title></title>
+	<link rel="stylesheet" href="admin.css" type="text/css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
+
 <body>
-	<div class="containerh">
-	<div class="containera">
-		<li class="side"><a href="home.php">Home</a>&nbsp &nbsp</li>
-		<li class="side"><a href="package-list.php">Manage Package</a>&nbsp &nbsp</li>
-		<li class="side"><a href="package.php">Create Package</a>&nbsp &nbsp</li>
-	</div>
+	<div id="mySidenav" class="sidenav">
+	<p class="logo"><span>T</span>ravel</p>
+  <a href="home.php" class="icon-a"><i class="fa fa-dashboard icons"></i> &nbsp;&nbsp;<u>Dashboard</u></a>
+  <a href="package.php" class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Create Packages</a>
+  <a href="package-list.php"class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Manage Packages</a>
+  <a href="#"class="icon-a"><i class="fa fa-users icons"></i> &nbsp;&nbsp;Manage Users</a>
+  <a href="#"class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Manage Booking</a>
+  <a href="#"class="icon-a"><i class="fa fa-user icons"></i> &nbsp;&nbsp;Manage Enquiries</a>
+  </div>
 
-	<div class="container-b">
-	&nbsp &nbsp &nbspWelcome
-	 <br>
-	 Comming Soon
-	</div>
-	<div><p class="logout"><a href="index.php">Logout</a>&nbsp &nbsp</p></div>
-	<style>
-		body{
-			background-image:url("back.jpg");
-		}
-		.containerh{
-    font-size: 100px;
-	display:grid;
-    grid-template-columns: 30% 60% 10%; 
-	gap:5px;
-	color:white;
-
+ 
+<div class="main">
+  <div class="header">
+    <b>Tourism Management System</b>
+    <span class="admins">
+      Administrator /
+    </span>
+    <span class="Logout">
+      <a href="index.php">
+      Logout 
+    </a>
+    </span>
+ </div>
+ 
+             </div>
+    <style>
+.main{
+  margin-left:285px;
+  overflow:scroll;
 }
-.containera{
-    background-color:rgb(61, 61, 61);
-    width:70%;
-    height:700px;
-    padding:1%;
-    font-size: 20px;
-    text-decoration: none;
-    color: aliceblue;
-}
-.logout{
-	font-size:25px;
-	color:white;
 
-}
-		</style>
 
-</div>
+.header{
+  background-color: rgb(8, 219, 238);
+  height:100px;
+  width:1150px;
+  margin-left: 34px;
+  margin-right: 40px;
+  font-size: 35px;
+  text-align: center;
+  padding-top: 20px;
+  color:#6e0eb8;
+  border-style:groove;
+  border-color: #ffffff;
+}
+.admins{
+  margin-left: 100px; 
+  color:#ffffff
+}
+.Logout>a{
+  margin-left: 20px; 
+  color:#4b50d9;
+  text-decoration: underline;
+}
+    </style>
 </body>
+
+
 </html>
