@@ -1,7 +1,3 @@
-<?php
-require('create_pac.php');
-require('error.php');
-?>
 <!Doctype HTML>
 <html>
 <head>
@@ -16,8 +12,8 @@ require('error.php');
 	<p class="logo"><span>T</span>ravel</p>
   <a href="home.php" class="icon-a"><i class="fa fa-dashboard icons"></i> &nbsp;&nbsp;Dashboard</a>
   <a href="package.php" class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Create Packages</a>
-  <a href="package-list.php"class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;<u>Manage Packages</u></a>
-  <a href="manageusers.php"class="icon-a"><i class="fa fa-users icons"></i> &nbsp;&nbsp;Manage Users</a>
+  <a href="package-list.php"class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Manage Packages</a>
+  <a href="manageusers.php"class="icon-a"><i class="fa fa-users icons"></i> &nbsp;&nbsp;<u>Manage Users</u></a>
   <a href="managebooking.php"class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Manage Booking</a>
   <a href="manageenquries.php"class="icon-a"><i class="fa fa-user icons"></i> &nbsp;&nbsp;Manage Enquiries</a>
   </div>
@@ -37,26 +33,25 @@ require('error.php');
  </div>
 
  <div class="pacakge-container"> 
-  <h3>Manage Tour Package</h3> 
+  <h3>Manage Users</h3> 
   <div class="table">
       <table style="width:96%">
           <tr>
             <th>S.N</th>
-            <th>Booking ID</th>
-            <th>Pacakge Name</th>
-            <th>Location</th>
-            <th>Price</th>
-            <th>Creation Date</th>
-            <th>Action</th>
+            <th>Name</th>
+            <th>Mobile No.</th>
+            <th>Email</th>
+            <th>Regdate</th>
+      
           </tr>
           <tr>
             <td>1</td>
-            <td>189</td>
-            <td>Trip 1</td>
-            <td>kohalpur</td>
-            <td>Kathmnadu</td>
-            <td>27rd April</td>
-            <td><a href="updatepackage.php">View Details</a></td>
+            <td>Prasiddha </td>
+            <td>9863144095</td>
+            <td>regmisailesh9999@gmail.com</td>
+            <td>23rd April</td>
+           
+            
           </tr>
           </table>
   </div>      

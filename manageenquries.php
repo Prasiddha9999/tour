@@ -1,7 +1,3 @@
-<?php
-require('create_pac.php');
-require('error.php');
-?>
 <!Doctype HTML>
 <html>
 <head>
@@ -16,10 +12,10 @@ require('error.php');
 	<p class="logo"><span>T</span>ravel</p>
   <a href="home.php" class="icon-a"><i class="fa fa-dashboard icons"></i> &nbsp;&nbsp;Dashboard</a>
   <a href="package.php" class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Create Packages</a>
-  <a href="package-list.php"class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;<u>Manage Packages</u></a>
+  <a href="package-list.php"class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Manage Packages</a>
   <a href="manageusers.php"class="icon-a"><i class="fa fa-users icons"></i> &nbsp;&nbsp;Manage Users</a>
   <a href="managebooking.php"class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Manage Booking</a>
-  <a href="manageenquries.php"class="icon-a"><i class="fa fa-user icons"></i> &nbsp;&nbsp;Manage Enquiries</a>
+  <a href="manageenquries.php"class="icon-a"><i class="fa fa-user icons"></i> &nbsp;&nbsp;<u>Manage Enquiries</u></a>
   </div>
 
  
@@ -37,26 +33,31 @@ require('error.php');
  </div>
 
  <div class="pacakge-container"> 
-  <h3>Manage Tour Package</h3> 
+  <h3>Manage Enquries</h3> 
   <div class="table">
       <table style="width:96%">
           <tr>
             <th>S.N</th>
-            <th>Booking ID</th>
-            <th>Pacakge Name</th>
-            <th>Location</th>
-            <th>Price</th>
-            <th>Creation Date</th>
-            <th>Action</th>
+            <th>Ticket Id</th>
+            <th>Name</th>
+            <th>Mobile No/Email</th>
+            <th>Subject</th>
+            <th>Description</th>
+            <th>Posting Date</th>
+            
+      
           </tr>
           <tr>
             <td>1</td>
-            <td>189</td>
-            <td>Trip 1</td>
-            <td>kohalpur</td>
-            <td>Kathmnadu</td>
-            <td>27rd April</td>
-            <td><a href="updatepackage.php">View Details</a></td>
+            <td>158 </td>
+            <th>Prasiddha</th>
+            <td>9863144095</td>
+            <td>Return Money</td>
+            <td>I dont want to go tour because i have some problem</td>
+            <th>27th april</th>
+
+           
+            
           </tr>
           </table>
   </div>      

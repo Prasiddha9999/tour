@@ -1,8 +1,3 @@
-<?php
-require('create_pac.php');
-require('error.php');
-?>
-
 <!Doctype HTML>
 <html>
 <head>
@@ -16,7 +11,7 @@ require('error.php');
 	<div id="mySidenav" class="sidenav">
 	<p class="logo"><span>T</span>ravel</p>
   <a href="home.php" class="icon-a"><i class="fa fa-dashboard icons"></i> &nbsp;&nbsp;Dashboard</a>
-  <a href="package.php"class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;<u>Create Packages</u></a>
+  <a href="package.php"class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Create Packages</a>
   <a href="package-list.php"class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Manage Packages</a>
   <a href="manageusers.php"class="icon-a"><i class="fa fa-users icons"></i> &nbsp;&nbsp;Manage Users</a>
   <a href="managebooking.php"class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Manage Booking</a>
@@ -44,40 +39,40 @@ require('error.php');
          <div class="container">
                    <div class="tab-content">
               <form action="package.php" class="forms" name="package" method="POST" enctype="multipart/form-data">
-                <h3>Create Package</h3>
+                <h3>Update Package</h3>
 
                 <div class="form-group">
                   <label for="focusedinput" class="tit">Package Name</label>
                     <div class="input-text">
-                      <input type="text" class="form-text" name="package_name" id="packagename" placeholder="Create Package" required>
+                      <input type="text" class="form-text" name="package_name" id="packagename" placeholder="Create Package" >
                     </div>
                 </div>
 
                 <div class="form-group">
                   <label for="focusedinput" class="tit">Package Type</label>
                     <div class="input-text">
-                      <input type="text" class="form-text" name="package_type" id="packagetype" placeholder=" Package Type" required>
+                      <input type="text" class="form-text" name="package_type" id="packagetype" placeholder=" Package Type" >
                     </div>
                 </div>
       
                 <div class="form-group">
                   <label for="focusedinput" class="tit">Package Location</label>
                     <div class="input-text">
-                      <input type="text" class="form-text" name="package_location" id="packagelocation" placeholder=" Package Location" required>
+                      <input type="text" class="form-text" name="package_location" id="packagelocation" placeholder=" Package Location" >
                     </div>
                 </div>
       
                 <div class="form-group">
                   <label for="focusedinput" class="tit">Package Price in NPR</label>
                     <div class="input-text">
-                      <input type="text" class="form-text" name="package_price" id="packageprice" placeholder=" Package Price in NPR" required>
+                      <input type="text" class="form-text" name="package_price" id="packageprice" placeholder=" Package Price in NPR" >
                     </div>
                 </div>
       
                 <div class="form-group">
                   <label for="focusedinput" class="tit">Package Features</label>
                     <div class="input-text">
-                      <input type="text" class="form-text" name="package_features" id="packagefeatures" placeholder="Package Features" required>
+                      <input type="text" class="form-text" name="package_features" id="packagefeatures" placeholder="Package Features" >
                     </div>
                 </div>		
       
@@ -98,7 +93,7 @@ require('error.php');
       
                 <div class="row">
                   <div class="button">
-                    <button type="submit" name="package_submit" class="btn-primary btn">Create</button>
+                    <button type="submit" name="package_submit" class="btn-primary btn">Change</button>
                   </div>
                 </div>			
               </form>
