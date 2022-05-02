@@ -48,6 +48,7 @@ require('error.php');
             <th>Price</th>
             <th>Creation Date</th>
             <th>Action</th>
+            <th>Action</th>
           </tr>
           <tr>
             <td>1</td>
@@ -57,6 +58,7 @@ require('error.php');
             <td>Kathmnadu</td>
             <td>27rd April</td>
             <td><a href="updatepackage.php">View Details</a></td>
+            <th><button type="button">Delete</button></th>
           </tr>
           </table>
   </div>      
