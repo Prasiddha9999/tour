@@ -42,36 +42,36 @@
 
     <div class="ad"><img src="ad.jpg" class="ads"></div>
 
-    <div class="pacakge-container"> 
-        <h3>My Tour History</h3> 
-        <div class="table">
-            <table style="width:100%">
-                <tr>
-                  <th>S.N</th>
-                  <th>Booking ID</th>
-                  <th>Pacakge Name</th>
-                  <th>From</th>
-                  <th>To</th>
-                  <th>Status</th>
-                  <th>Comment</th>
-                  <th>Booking Date</th>
-                  <th>Action</th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>189</td>
-                  <td>Trip 1</td>
-                  <td>kohalpur</td>
-                  <td>Kathmnadu</td>
-                  <td>Pending</td>
-                  <td>Hello</td>
-                  <td>27rd April</td>
-                  <td>Cancel</td>
-                </tr>
-                </table>
-        </div>      
-          
-    </div>
+                <div class="pacakge-container"> 
+                    <h3>My Tour History</h3> 
+                    <div class="table">
+                        <table style="width:100%">
+                            <tr>
+                              <th>S.N</th>
+                              <th>Booking ID</th>
+                              <th>Pacakge Name</th>
+                              <th>From</th>
+                              <th>To</th>
+                              <th>Status</th>
+                              <th>Comment</th>
+                              <th>Booking Date</th>
+                              <th>Action</th>
+                            </tr>
+                            <tr>
+                              <td>1</td>
+                              <td>189</td>
+                              <td>Trip 1</td>
+                              <td>kohalpur</td>
+                              <td>Kathmnadu</td>
+                              <td>Pending</td>
+                              <td>Hello</td>
+                              <td>27rd April</td>
+                              <td>Cancel</td>
+                            </tr>
+                            </table>
+                    </div>      
+                      
+                </div>
 
 
     <div class="footer">© 2022 Neptravels. All Rights Reserved</div>
