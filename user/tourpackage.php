@@ -56,7 +56,7 @@
                     </div>
                     <div class="prize">
                         <h5>USD 5000</h5>
-                        <a href="mydetail.html" class="view">Details</a>
+                        <a href="mydetail.php" class="view">Details</a>
                     </div>
                 </div>
     </div>
