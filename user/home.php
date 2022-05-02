@@ -56,11 +56,11 @@
                     </div>
                     <div class="prize">
                         <h5>USD 5000</h5>
-                        <a href="mydetail.html" class="view">Details</a>
+                        <a href="mydetail.php" class="view">Details</a>
                     </div>
                 </div>
     </div>
-    <div class="morepackege"><a href="tourpackage.html" class="morepack">View More Package</a></div>
+    <div class="morepackege"><a href="tourpackage.php" class="morepack">View More Package</a></div>
     <div class="fake"><img src="fake.jpg" class="ads"></div>
 
 
