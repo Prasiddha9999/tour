@@ -104,7 +104,7 @@ require('error.php');
               </form>
             </div>    
              </div>
-    <style>
+             <style>
       *{
   box-sizing: border-box;
 }
@@ -116,11 +116,8 @@ require('error.php');
 .container {
  
   font-family: 'Jost';
-  display: flex;
   height: 100vh;
   background: #eee;
-  align-items: center;
-  justify-content: center;
   
  
 }
@@ -168,12 +165,12 @@ a:link{
   width:800px;
 }
 .tab-content{
-  margin-top:-70px;
+  margin-left:35px;
  
 }
 .header{
   background-color: rgb(8, 219, 238);
-  height:100px;
+  height:125px;
   width:1150px;
   margin-left: 34px;
   margin-right: 40px;

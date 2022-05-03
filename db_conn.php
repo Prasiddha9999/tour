@@ -38,6 +38,9 @@ if (isset($_POST['admin_log'])) {
       array_push($errors, "Password is required");
   }
 
+     
+  
+
   if (count($errors) == 0) {
       $query ="SELECT * FROM admin_login WHERE admin_name='$email' AND admin_pass='$password'";        
       $results = mysqli_query($db, $query);

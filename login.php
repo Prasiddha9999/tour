@@ -18,9 +18,9 @@
 					<?php include('error.php');?>
 					
 					<label>Login</label>
-					<img src="image/login_img.png" alt="Tour Management System" class="login_img">	
+				
 					<input type="email"  name="username" placeholder="Email"  >
-					<input type="password"  name="password" placeholder="Password" >
+					<input type="password"  name="password" placeholder="Password" ><br><br>
 					<button type="submit" class="btn" name="login_user">Login</button>
 					
 				</form>

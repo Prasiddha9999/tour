@@ -14,15 +14,16 @@
 					<?php include('error.php');?>
 					
 					<div class="container">
-        <div class="first"><img src="image/logo.png"></div><div class="firsts">Neptravels</div>
+                    <div class="bothlogin">
+        <div class="third"><div class="first"><img src="image/logo.png"></div><div class="firsts">Neptravels</div></div>
+        <div class="third"><button type="submit" class="btn" name="login_page">Login or Signup</button></div>
+        </div>
+       
         <div class="second">
             <p class="secondtexta">Neptravels</p>
             <p class="secondtextb">Booking Travels made just got easier</p>
         </div>
-        <div class="bothlogin">
-        <div class="third"><button type="submit" class="admin" name="admin_page"><a href="admin.php" class="admintext">Admin</a></button></div>
-        <div class="third"><button type="submit" class="btn" name="login_page">Login or Signup</button></div>
-        </div>
+       
         <div class="fourth">
             <p class="secondtextc">Explore Nepal</p>
             <p class="secondtextd">Beautifull place to explore</p>
@@ -101,7 +102,8 @@ img{
     height: 300px;
     background-image: url('image/second.jpg');
     background-repeat: no-repeat;
-   filter: brightness(0.20);
+    filter: brightness(0.80);
+   
 }
 .third{
     width:100%;
@@ -113,7 +115,7 @@ img{
 }
 .btn{
     margin-left:75%;
-    margin-top:17px;
+    margin-top:10px;
     border: 2px solid rgb(245, 82, 228);
     background-color: rgb(247, 247, 247);
     color:rgb(246, 21, 242);
@@ -138,7 +140,7 @@ img{
     width:100%;
     height: 150px;
     background-image: url('image/fourth.jpg'); 
-    filter: brightness(0.60);
+    filter: brightness(0.80);
 }
 .gap{
     width:100%;
@@ -149,25 +151,30 @@ img{
     height: 250px;
     background-image: url('image/imga.jpg'); 
     margin-left:10%;
+    border-radius:5px;
 }
 .imgb{
     width:80%;
     height: 250px;
     background-image: url('image/imgb.jpg'); 
     margin-left:10%;
+    border-radius:5px;
 }
 .imgc{
     width:80%;
     height: 250px;
     background-image: url('image/imgc.jpg'); 
     margin-left:10%;
+    border-radius:5px;
 }
 .imgd{
     width:80%;
     height: 250px;
     background-image: url('image/imgd.jpg'); 
     margin-left:10%;
+    border-radius:5px;
 }
+
 .containera{
     display:grid;
   grid-template-columns: 30% 20% 30% 20%;
