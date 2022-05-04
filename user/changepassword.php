@@ -1,4 +1,6 @@
-
+<?php
+require('C:\xampp\htdocs\tour\change_pass.php');
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -19,7 +21,7 @@
 		</ul>
 		<ul class="top-header-right"> 
 			<li class="wellcome">Welcome :</li>				
-			<li class="email">abc@gmail.com</li> 
+			<li class="email"><?php echo($_SESSION['user_email'])?></li> 
 			<li class="logout"><a href="../index.php" >Logout</a></li>
         </ul>
     </div>
@@ -50,15 +52,15 @@
                     
 
                         <div class="container">
-                          <form action="#">
-                            <label for="opassword">Old Password</label><br>
-                            <input type="password" id="opassword" name="opassword" placeholder="Your Old Password"><br><br>
-                            <label for="password">New Password</label><br>
-                            <input type="password" id="password" name="password" placeholder="Your New Password"><br><br>
+                          <form action="" method ="post">
+                            <label for="opassword">User Email</label><br>
+                            <input type="email" id="email" name="userEmail" placeholder="Your Email address"><br><br>
+                            <label for="password">Old Password</label><br>
+                            <input type="password" id="password" name="o_pwd" placeholder="Your old Password"><br><br>
                             <label for="cpassword">New password</label><br>
-                            <input type="password" id="cpassword" name="cpassword" placeholder="Conform New Password"><br><br>
+                            <input type="password" id="cpassword" name="c_pwd" placeholder="Conform New Password"><br><br>
                         <br>
-                            <input type="submit" class="sub" value="Change">
+                            <input type="submit" class="sub" value="Change" name ="change_pass">
                           </form>
                         </div>
                          

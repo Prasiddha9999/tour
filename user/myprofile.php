@@ -1,4 +1,8 @@
+<?php
 
+include('C:\xampp\htdocs\tour\db_conn.php');
+include('C:\xampp\htdocs\tour\update_user.php');
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -19,7 +23,7 @@
 		</ul>
 		<ul class="top-header-right"> 
 			<li class="wellcome">Welcome :</li>				
-			<li class="email">abc@gmail.com</li> 
+			<li class="email"><?php echo($_SESSION['user_email'])?></li> 
 			<li class="logout"><a href="../index.php" >Logout</a></li>
         </ul>
     </div>
@@ -50,22 +54,35 @@
                     
 
                         <div class="container">
-                          <form action="#">
+                          <form action="" method="post">   
+                            <?php
+                          $currentUser = $_SESSION['user_email'];
+                          $sql = "SELECT * FROM signup WHERE email = '$currentUser'";
+                          $gotResult = mysqli_query($db,$sql);
+                          if($gotResult){
+                              if(mysqli_num_rows($gotResult)>0){
+                                  while($row = mysqli_fetch_array($gotResult)){
+                                    
+                                ?>
+                            <label for="id">User Id</label>
+                            <input type="text" id="id" name="id" placeholder="Your id" value="<?php echo $row['id']?>" readonly>
                             <label for="name">Full Name</label>
-                            <input type="text" id="name" name="fullname" placeholder="Your Full Name">
+                            <input type="text" id="name" name="fullname" placeholder="Your Full Name" value="<?php echo $row['username']?>">
                             <label for="address">Address</label>
-                            <input type="text" id="address" name="address" placeholder="Your Address">
+                            <input type="text" id="address" name="address" placeholder="Your Address" value="<?php echo $row['address']?>">
                             <label for="email">Email Address</label>
-                            <input type="text" id="email" name="email" placeholder="Your  email Address">
+                            <input type="text" id="email" name="email" placeholder="Your  email Address" value="<?php echo $row['email']?>">
                             <label for="number">Mobile Number</label>
-                            <input type="text" id="number" name="number" placeholder="Your Address">
-                           
-                           
-                        
-                           
+                            <input type="text" id="number" name="num" placeholder="Your Number" value="<?php echo $row['phonenumber']?>"> 
                         <br><br>
-                            <input type="submit" class="sub" value="Update">
+                            <input type="submit" class="sub" value="Update" name ="user_update">
+                          <?php    
+                          }
+                                  }
+                                }
+                                ?> 
                           </form>
+                          
                         </div>
                          
                     </div>

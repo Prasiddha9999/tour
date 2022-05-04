@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -19,7 +21,7 @@
 		</ul>
 		<ul class="top-header-right"> 
 			<li class="wellcome">Welcome :</li>				
-			<li class="email">abc@gmail.com</li> 
+			<li class="email"><?php echo($_SESSION['user_email'])?></li> 
 			<li class="logout"><a href="../index.php" >Logout</a></li>
         </ul>
     </div>
