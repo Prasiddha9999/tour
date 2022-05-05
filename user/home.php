@@ -1,5 +1,6 @@
 <?php
-session_start();
+include('C:\xampp\htdocs\tour\db_conn.php');
+$res = mysqli_query($db,"SELECT * FROM create_package");
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -10,6 +11,7 @@ session_start();
 <link href="user.css" rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel ="stylesheet" id = "bootstrap-css">
 </head>
 <body>
     <div class="header">
@@ -45,24 +47,57 @@ session_start();
     <div class="ad"><img src="ad.jpg" class="ads"></div>
 
     <div class="pacakge-container"> 
-        <h3>Package List</h3>        
+        <!-- <h3>Package List</h3>        
                 <div class="room">
                     <div class="packageimage">
                         <img src="packageimage.png" class="packageimg" alt="">
-                    </div>
-                    <div class="pacakge-details">
-                        <h4>Package Name: Indonesia</h4>
-                        <h6>Package Type : Family</h6>
-                        <p><b>Package Location :</b> Indonesia</p>
-                        <p><b>Features</b> Frree wifi, pickup and drop etc</p>
-                    </div>
-                    <div class="prize">
-                        <h5>USD 5000</h5>
-                        <a href="mydetail.php" class="view">Details</a>
-                    </div>
-                </div>
-    </div>
-    <div class="morepackege"><a href="tourpackage.php" class="morepack">View More Package</a></div>
+                    </div> -->
+                    <tbody >
+            <?php 
+            /* Used to display the serial number of the table. */
+            $i = 1;
+            /* Fetching the data from the database and displaying it in the table. */
+            while($row = mysqli_fetch_assoc($res)){
+            ?>
+                    <table style="width:96%">
+                 <tr>
+                    <th>S.N</th>
+                    <th>Package Name </th>
+                    <th>Package Type  </th>
+                    <th>Package Location </th>
+                    <th>Features</th>
+                    <th>Description</th>
+                    <th>Price</th>
+      
+                 </tr>
+                    <!-- </div>
+
+                    <div class="prize"> -->
+                    <tr>
+
+                    <th scope ="row"> <?php echo $i ?> </th>
+                    <td><?php echo $row['pac_name'] ?> </td>
+                    <td><?php echo $row['pac_type'] ?></td>
+                    <td><?php echo $row['pac_location'] ?></td>
+                    <td><?php echo $row['pac_features'] ?></td> 
+                    <td><?php echo $row['pac_details'] ?></td>  
+                    <td><h5><?php echo $row['pac_price'] ?></h5></td>
+
+                    </tr> 
+                        
+          <?php 
+
+        /* Used to increment the value of  by 1. */
+        $i++;
+
+        } 
+        
+        ?>
+        
+</tbody>
+    </table>
+    <!-- <a href="mydetail.php" class="view">Details</a>
+    <div class="morepackege"><a href="tourpackage.php" class="morepack">View More Package</a></div> -->
     <div class="fake"><img src="fake.jpg" class="ads"></div>
 
 
