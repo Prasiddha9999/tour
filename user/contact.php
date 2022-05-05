@@ -1,5 +1,7 @@
 <?php
 session_start();
+require('C:\xampp\htdocs\tour\user_contact.php');
+error_reporting(0);
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -52,7 +54,7 @@ session_start();
                     
 
                         <div class="container">
-                          <form action="#">
+                          <form action="" method="post">
                             <label for="fname">First Name</label>
                             <input type="text" id="fname" name="firstname" placeholder="Your name..">
                         
@@ -60,16 +62,12 @@ session_start();
                             <input type="text" id="lname" name="lastname" placeholder="Your last name..">
                         
                             <label for="country">Country</label>
-                            <select id="country" name="country">
-                              <option value="Nepal">Nepal</option>
-                              <option value="India">India</option>
-                              <option value="usa">USA</option>
-                            </select>
+                            <input type="text" id="country" name="country" placeholder="Your Country..">
                         
                             <label for="subject">Subject</label>
                             <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
                         
-                            <input type="submit" class="sub" value="Submit">
+                            <input type="submit" class="sub" value="Submit" name="submit_info">
                           </form>
                         </div>
                          

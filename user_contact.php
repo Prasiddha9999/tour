@@ -1,0 +1,37 @@
+<?php
+error_reporting(0);
+require('db_conn.php');
+
+// REGISTER USER
+if (isset($_POST['submit_info'])) {
+    // receive all input values from the form
+    $firstname = mysqli_real_escape_string($db, $_POST['firstname']);
+    $lastname = mysqli_real_escape_string($db, $_POST['lastname']);
+    $country = mysqli_real_escape_string($db, $_POST['country']);
+    $subject = mysqli_real_escape_string($db, $_POST['subject']);
+  
+
+   /* Checking if there are no errors in the form. If there are no errors, it will insert the data into
+   the database. */
+    if (count($errors) == 0) {
+
+/* This is checking if the user has filled out all the forms. If the user has not filled out all the
+forms, it will alert the user to fill out all the forms. */
+      if(empty($firstname) || empty($lastname) || empty($country)|| empty($subject)){
+        echo '<script type = "text/javascript"> alert("Please fill out all the forms") </script>';
+      }
+      
+      else{
+        $query = "INSERT INTO user_contact (fname, lname, country,subject) 
+                  VALUES('$firstname', '$lastname', '$country', '$subject')";
+        mysqli_query($db, $query);
+
+        
+        /* Redirecting the user to the contact page. */
+        echo '<script type = "text/javascript"> alert("User enquiry has been updated") </script>';
+        }
+      }
+
+  }
+
+?>

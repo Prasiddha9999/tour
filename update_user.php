@@ -1,18 +1,7 @@
 
 <?php
-// error_reporting(0);
+error_reporting(0);
 include('db_conn.php');
-
-// $currentUser = $_SESSION['email'];
-// $sql = "SELECT * FROM signup WHERE username = '$currentUser'";
-// $gotResult = mysqli_query($db,$sql);
-// if($gotResult){
-//   if(mysqli_num_rows($gotResult)>0){
-//     while($row = mysqli_fetch_array($gotResult)){
-//     }
-//   }
-// }
-
 
 if(isset($_POST['user_update'])){
 

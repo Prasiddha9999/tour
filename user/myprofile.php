@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(0);
 include('C:\xampp\htdocs\tour\db_conn.php');
 include('C:\xampp\htdocs\tour\update_user.php');
 ?>

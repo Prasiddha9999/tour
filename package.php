@@ -1,6 +1,14 @@
 <?php
 require('create_pac.php');
 require('error.php');
+include('db_conn.php');
+
+session_start();
+
+// if(!isset($_SESSION['UID'])){
+//   header('location:index.php');
+//   die();
+// }
 ?>
 
 <!Doctype HTML>
@@ -14,7 +22,7 @@ require('error.php');
 
 <body>
 	<div id="mySidenav" class="sidenav">
-	<p class="logo"><span>T</span>ravel</p>
+	<p class="logo"><span>Nep</span>ravel</p>
   <a href="home.php" class="icon-a"><i class="fa fa-dashboard icons"></i> &nbsp;&nbsp;Dashboard</a>
   <a href="package.php"class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;<u>Create Packages</u></a>
   <a href="package-list.php"class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Manage Packages</a>

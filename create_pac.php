@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 require('db_conn.php');
 require('error.php');
 // initializing variables
@@ -15,14 +16,12 @@ if (isset($_POST['package_submit'])) {
     $pacFeatures = mysqli_real_escape_string($db, $_POST['package_features']);
     $pacDetails = mysqli_real_escape_string($db, $_POST['package_details']);
 
-    // form validation: ensure that the form is correctly filled
-    // by adding (array_push()) corresponding error unto $errors array
-    if (empty($pacName)) { array_push($errors, "Package Name is required"); }
-    if (empty($pacType)) { array_push($errors, "Package Type is required"); }
-    if (empty($pacLocation)) { array_push($errors, "Package Location is required"); }
-    if (empty($pacPrice)) { array_push($errors, "Package Price is required"); }
-    if (empty($pacFeatures)) { array_push($errors, "Package Features is required"); }
-    if (empty($pacDetails)) { array_push($errors, "Package Details is required"); }
+
+/* This is checking if the user has filled out all the forms. If the user has not filled out all the
+forms, it will alert the user to fill out all the forms. */
+if(empty($pacName) || empty($pacType) || empty($pacLocation)|| empty($pacPrice)|| empty($pacFeatures)|| empty($pacDetail)){
+  echo '<script type = "text/javascript"> alert("Please fill out all the forms") </script>';
+}
 
         // first check the database to make sure 
     // Package does not already exist with the same name and location
@@ -78,7 +77,6 @@ if (isset($_POST['package_submit'])) {
         $query = "INSERT INTO create_package(pac_name, pac_type,pac_location,pac_price,pac_features,pac_details,pac_image) 
                   VALUES('$pacName', '$pacType', '$pacLocation', '$pacPrice', '$pacFeatures','$pacDetails','$destinationFile')";
         $query = mysqli_query($db, $query);
-        $_SESSION['package_name'] = $pacName;
         $_SESSION['success'] = "Your package is created";
         header('location: package-list.php');
 

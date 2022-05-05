@@ -1,5 +1,6 @@
 <?php
 
+error_reporting(0);
 session_start();
 // initializing variables
 $username = "";
@@ -51,6 +52,7 @@ if (isset($_POST['admin_log'])) {
       /* This is checking if the user is logged in. */
       if (mysqli_num_rows($results) == 1) {
         header('location: home.php');
+
       }
       else {
            array_push($errors, "Username or password wrong");
@@ -68,12 +70,9 @@ if (isset($_POST['login_user'])) {
   $password = mysqli_real_escape_string($db, $_POST['password']);
 
 /* This is checking if the email and password are empty. */
-  if (empty($email)) {
-  	array_push($errors, "Email is required");
-  }
-  if (empty($password)) {
-  	array_push($errors, "Password is required");
-  }
+if(empty($email) || empty($password)){
+  echo '<script type = "text/javascript"> alert("Please fill out all the forms") </script>';
+}
 
   if (count($errors) == 0) {
   	// $password = md5($password);
@@ -81,8 +80,10 @@ if (isset($_POST['login_user'])) {
   	$results = mysqli_query($db, $query);
   	if (mysqli_num_rows($results) == 1) {
   	  $_SESSION['user_email'] = $email;
+      $_SESSION['UID']= $row['id'];
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: user/home.php');
+      die();
   	}else {
   		 array_push($errors, "Username or password wrong");
   	}

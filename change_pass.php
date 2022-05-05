@@ -30,7 +30,7 @@ if (count($errors) == 0) {
 /* This is checking if the information exists in the database. */
  if ($user) { 
   if ($user['email'] !== $eml or $user['password'] !== $old_pass) {
-    echo "<script> alert ('eml or password didnot match ')</script>";
+    echo "<script> alert ('emaill or password didnot match ')</script>";
     
   }
   else{
