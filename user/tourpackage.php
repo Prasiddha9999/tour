@@ -1,5 +1,7 @@
 <?php
 session_start();
+include('C:\xampp\htdocs\tour\db_conn.php');
+$res = mysqli_query($db,"SELECT * FROM create_package");
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -45,22 +47,42 @@ session_start();
     <div class="ad"><img src="ad.jpg" class="ads"></div>
 
     <div class="pacakge-container"> 
-        <h3>Package List</h3>        
+        <h3>Package List</h3>   
+            <?php 
+            /* Used to display the serial number of the table. */
+            $i=1;
+            /* Fetching the data from the database and displaying it in the table. */
+            while($row = mysqli_fetch_assoc($res)){
+               
+            ?>
+                        
                 <div class="room">
                     <div class="packageimage">
                         <img src="packageimage.png" class="packageimg" alt="">
                     </div>
                     <div class="pacakge-details">
-                        <h4>Package Name: Indonesia</h4>
-                        <h6>Package Type : Family</h6>
-                        <p><b>Package Location :</b> Indonesia</p>
-                        <p><b>Features</b> Frree wifi, pickup and drop etc</p>
+                        <h4>Package Name: <?php echo $row['pac_name'] ?></h4>
+                        <h6>Package Type : <?php echo $row['pac_type'] ?></h6>
+                        <p><b>Package Location : </b><?php echo $row['pac_location'] ?></p>
+                        <p><b>Features : </b><?php echo $row['pac_features'] ?></p>
                     </div>
                     <div class="prize">
-                        <h5>USD 5000</h5>
+                        <h5>NPR <?php echo $row['pac_price'] ?></h5>
                         <a href="mydetail.php" class="view">Details</a>
                     </div>
                 </div>
+ 
+            
+               
+                        
+          <?php 
+
+        /* Used to increment the value of  by 1. */
+        $i++;
+    }
+        
+        
+        ?>
     </div>
 
     <div class="footer">© 2022 Neptravels. All Rights Reserved</div>

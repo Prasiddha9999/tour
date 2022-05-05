@@ -3,8 +3,6 @@ body{
 	background-color:#f1f1f1;
 	overflow:hidden;
 	font-family: system-ui;
- 
-  
 }
 .logo{
 	margin: 0px;
@@ -14,9 +12,7 @@ body{
   margin-bottom: 30px;
 }
 .logo span{
-	color: #f7403b;
-  color: #2952cc;
-  
+  color: #e70101;
 }
 .sidenav {
   height: 100%;
@@ -25,7 +21,7 @@ body{
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #573b8a;
+  background-color: #3f188e;
   overflow: hidden;
   transition: 0.5s;
   padding-top: 30px;

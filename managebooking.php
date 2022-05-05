@@ -4,13 +4,14 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" href="admin.css" type="text/css"/>
+  <link rel="stylesheet" href="seperates.css" type="text/css"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 
 <body>
 	<div id="mySidenav" class="sidenav">
-	<p class="logo"><span>T</span>ravel</p>
+	<p class="logo"><span>Nep</span>Travel</p>
   <a href="home.php" class="icon-a"><i class="fa fa-dashboard icons"></i> &nbsp;&nbsp;Dashboard</a>
   <a href="package.php" class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Create Packages</a>
   <a href="package-list.php"class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Manage Packages</a>
@@ -24,7 +25,7 @@
   <div class="header">
     <b>Tourism Management System</b>
     <span class="admins">
-      Administrator /
+      Admin /
     </span>
     <span class="Logout">
       <a href="index.php">
@@ -83,39 +84,6 @@
       tr:nth-child(even) {
         background-color: #dddddd;
       }
-      .pacakge-container{
-        margin-left:33px;
-      }
-    
-
-.main{
-  margin-left:285px;
-  overflow:hidden;
-}
-
-
-.header{
-  background-color: rgb(8, 219, 238);
-  height:100px;
-  width:1150px;
-  margin-left: 34px;
-  margin-right: 40px;
-  font-size: 35px;
-  text-align: center;
-  padding-top: 20px;
-  color:#6e0eb8;
-  border-style:groove;
-  border-color: #ffffff;
-}
-.admins{
-  margin-left: 100px; 
-  color:#ffffff
-}
-.Logout>a{
-  margin-left: 20px; 
-  color:#4b50d9;
-  text-decoration: underline;
-}
 
     </style>
 </body>
