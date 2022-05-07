@@ -5,8 +5,8 @@
 }
 
 .container {
-  font-family: 'Jost';
-overflow: scroll;
+  font-family: Jost;
+  overflow: scroll;
   background: #eee;
   
  
@@ -17,7 +17,7 @@ form{
   height: 100%; 
 }
 h3{
-  color: #573b8a;
+  color: rgb(26, 161, 26);
   text-indent: 25px;
   font-size: 2em;
 }
@@ -42,10 +42,13 @@ input,textarea{
 button{
   width:8%;
   color: white;
-  background: #573b8a;
+  background: rgb(35, 202, 35);
   border: none;
   font-size: 15px;
   margin-left: 33%; 
+}
+.btn-primary.btn:hover{
+  background: #28ec32;
 }
 a:link{
   text-decoration: none;

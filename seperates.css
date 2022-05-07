@@ -12,13 +12,13 @@ img{
   width: 50%;
  
 }
+
 .myForm{
     max-width:500px;
    margin: auto;
    margin-top: 10px;
   }
   .input-container {
-    
     display: flex;
     width: 100%;
     margin-bottom: 15px;
@@ -65,6 +65,9 @@ img{
   text-align:center;
   color:red;
 
+}
+.btn.btn-danger:hover{
+  color:rgb(193, 52, 52);
 }
 
 .box{
@@ -123,8 +126,10 @@ font-size:35px;
 .header>.Logout>a{
 margin-left: 10px; 
 font-size:30px;
-color:#8083cc;
-text-decoration: underline;
+color:#f9f9f9;
+}
+.Logout>a:hover{
+  color:rgb(193, 52, 52);
 }
 
 
