@@ -104,6 +104,9 @@ margin-top:1px;
 	color: #3b69cc;
 	transform: scale(.6);
 }
+.signups label:hover{
+	color:#034bf2;
+}
 
 #chk:checked ~ .signups{
 	transform: translateY(-580px);
@@ -140,5 +143,8 @@ margin-top:1px;
     margin-left:10px;
 	color: #fff;
     
+}
+.closebtn:hover{
+	color:rgb(193, 52, 52);
 }
 

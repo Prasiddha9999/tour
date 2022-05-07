@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="index.css" type="text/css"/>
     <link rel="stylesheet" href="login.css" type="text/css"/>
     
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="topbtn"><button class="openbtn" onclick="openForm()">Login or Signup</button></div>
@@ -21,12 +21,12 @@
 					<div class="container">
                     <div class="bothlogin">
                     
-        <div class="third"><div class="first"><img src="image/logos.png"></div><div class="firsts">Neptravels</div></div>
+        <div class="third"><div class="first"><img src="image/logos.png"></div><div class="firsts">NepTravels</div></div>
        
         </div>
        
         <div class="second">
-            <p class="secondtexta">Neptravels</p>
+            <p class="secondtexta">NepTravels</p>
           
          
         </div>
@@ -52,12 +52,12 @@
         <div class="imgc"></div>
         <div>
         <div class="texta">Mountains</div>
-        <div class="textb">There are many mountain in our nepal.</div>
+        <div class="textb">There are many mountain in our Nepal.</div>
         </div>
         <div class="imgd"></div>
         <div>
         <div class="texta">Lakes</div>
-        <div class="textb">There are many lakes in our nepal</div>
+        <div class="textb">There are many lakes in our Nepal</div>
         </div>
     </div>
         <br>
@@ -67,7 +67,7 @@
         <br>
         <div class="question">Questions?</div>
         <br>
-        <div class="questiontext">Hello wellcome our system</div>
+        <div class="questiontext">Let's get connected</div>
         <br>
         <hr class="line">
         <div class="third"><button type="submit" class="book" name="book_page">Book Now</button></div>
