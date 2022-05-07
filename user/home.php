@@ -29,7 +29,7 @@ $res = mysqli_query($db,"SELECT * FROM create_package");
     </div>
 
      <div class="title">
-        <a href="home.php">Tourism Management System</span></a>	
+        <a href="home.php">NepTravels</span></a>	
      </div>
 
      <div class="menu">
@@ -81,7 +81,6 @@ $res = mysqli_query($db,"SELECT * FROM create_package");
         ?>
     </div>
     <div class="morepackege"><a href="tourpackage.php" class="morepack">View More Package</a></div>
-    <div class="fake"><img src="fake.jpg" class="ads"></div>
 
 
     <div class="footer">© 2022 Neptravels. All Rights Reserved</div>           

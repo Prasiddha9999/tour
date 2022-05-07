@@ -9,6 +9,7 @@ session_start();
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="user.css" rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -27,7 +28,7 @@ session_start();
     </div>
 
      <div class="title">
-        <a href="home.php">Tourism Management System</span></a>	
+        <a href="home.php">NepTravels</span></a>	
      </div>
 
      <div class="menu">
@@ -40,7 +41,7 @@ session_start();
         </ul>
     </div>
 
-    <div class="namelist">Package List</div>
+    <div class="namelist">Package Details</div>
 
     <div class="ad"><img src="ad.jpg" class="ads"></div>
 
@@ -52,10 +53,10 @@ session_start();
                         <img src="packageimage.png" class="packageimg" alt="">
                     </div>
                     <div class="pacakge-details">
-                        <h4>Package Name: Indonesia</h4>
+                        <h4>Package Name: Nepal</h4>
                         <h6>Package Type : Family</h6>
-                        <p><b>Package Location :</b> Indonesia</p>
-                        <p><b>Features</b> Frree wifi, pickup and drop etc</p>
+                        <p><b>Package Location :</b> Pokahra</p>
+                        <p><b>Features</b> Free wifi, pickup and drop etc</p>
                     </div>
                     <div class="time"> 
                         <form action="#.php">
@@ -79,14 +80,46 @@ session_start();
                 <h5 class="lcmt"><b>Comment</b></h5>
                 <form action="#">
                     <textarea id="Comment" name="Comment" placeholder="Write Coment here.." style="height:200px"></textarea>
-                    <input type="button" class="book" value="Book">
+                    <input type="button" class="book" onclick="openForm()" value="Book">
                   </form>
                 
                 </div>  
                      
     </div>
-  
     <div class="footer">© 2022 Neptravels. All Rights Reserved</div>
-                   
+           
+    
+    <!-- Next overlay -->
+
+    <div id="myOverlay" class="overlay">
+        <div class="book-form">
+        <span class="closebtn" onclick = "closeForm()" title = "Close Overlay"> &#215 </span>
+        <br><br>
+        <label for="Name" class="form">Full Name</label><br>
+        <input type="name" class="inp" placeholder="Full Name"><br>
+        <label for="Address" class="form">Address</label><br>
+        <input type="name" class="inp" placeholder="Address"><br>
+        <label for="Mobile Number" class="form">Mobile Number</label><br>
+        <input type="text" class="inp" placeholder="Mobile Number"><br>
+        <label for="No Of Peoples" class="form">Total Numbers of Peoples</label><br>
+        <input type="number" class="inp" placeholder="Enter the Total Numeber of Peoples">
+        <p class="bookactive">Congratulations! Booking Sucessfull.</p>
+        <input class="booka" type="submit" value="Book Now">
+        <span><input class="bookb" type="submit" value="Pay Online Now"></span>
+        </div>
+        </div>
+    </div>
+   
+
+    <script>
+function openForm(){
+    document.getElementById("myOverlay").style.display="block";
+}
+</script>
+<script>
+function closeForm(){
+    document.getElementById("myOverlay").style.display="none";
+}
+</script>
 </body>
 </html>

@@ -19,11 +19,11 @@ if(mysqli_connect_error())
 //index page setup up
 if (isset($_POST['login_page'])) {
 
-  header('location: login.php');
+  header('location: index.php');
 }
 if (isset($_POST['book_page'])) {
 
-  header('location: login.php');
+  header('location: index.php');
 }
 if (isset($_POST['admin_page'])) {
 
@@ -133,7 +133,7 @@ if (isset($_POST['reg_user'])) {
       $query = "INSERT INTO signup (username, email, phonenumber,address,password) 
                 VALUES('$username', '$email', '$phonenumber', '$address', '$password')";
       mysqli_query($db, $query);
-      header('location: login.php');
+      header('location: index.php');
   }
 }
 

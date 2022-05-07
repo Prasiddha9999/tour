@@ -29,7 +29,7 @@ include('C:\xampp\htdocs\tour\update_user.php');
     </div>
 
      <div class="title">
-        <a href="home.php">Tourism Management System</span></a>	
+        <a href="home.php">NepTravels</span></a>	
      </div>
 
      <div class="menu">

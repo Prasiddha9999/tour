@@ -7,27 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="index.css" type="text/css"/>
+    <link rel="stylesheet" href="login.css" type="text/css"/>
+    
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
+<div class="topbtn"><button class="openbtn" onclick="openForm()">Login or Signup</button></div>
 			<div class="login">
-				
+           
 				<form method="post" action="">
 					<?php include('error.php');?>
 					
 					<div class="container">
                     <div class="bothlogin">
-        <div class="third"><div class="first"><img src="image/logo.png"></div><div class="firsts">Neptravels</div></div>
-        <div class="third"><button type="submit" class="btn" name="login_page">Login or Signup</button></div>
+                    
+        <div class="third"><div class="first"><img src="image/logos.png"></div><div class="firsts">Neptravels</div></div>
+       
         </div>
        
         <div class="second">
             <p class="secondtexta">Neptravels</p>
-            <p class="secondtextb">Booking Travels made just got easier</p>
-        </div>
-       
-        <div class="fourth">
-            <p class="secondtextc">Explore Nepal</p>
-            <p class="secondtextd">Beautifull place to explore</p>
+          
+         
         </div>
         <div class="gap"></div>
         <hr class="line">
@@ -72,7 +73,54 @@
         <div class="third"><button type="submit" class="book" name="book_page">Book Now</button></div>
         <hr class="line">
     </div>
+    
  
-     </style>
+    
+    <!-- next -->
+    <div id="myOverlay" class="overlay">
+        <div class="wrap">
+        <span class="closebtn" onclick = "closeForm()" title = "Close Overlay"> &#215 </span>
+	<div class="mains">  
+		<input type="checkbox" id="chk" aria-hidden="true">
+			<div class="logins">
+				<form method="post" action="login.php">
+					<?php include('error.php');?>
+					
+					<label>Login</label>
+				
+					<input type="email"  name="username" placeholder="Email"  >
+					<input type="password"  name="password" placeholder="Password" ><br><br>
+					<button type="submit" class="btns" name="login_user">Login</button>
+					
+				</form>
+			</div>
+
+			<div class="signups">
+				<form method="post" action="login.php">
+					<label for="chk" aria-hidden="true">Sign up</label>
+					<input type="text" name="txt" placeholder="Name" required="">
+					<input type="email" name="email" placeholder="Email" required="">
+					<input type="text" name="num" placeholder="Phone Number" required="">
+					<input type="text" name="address" placeholder="Address" required="">
+					<input type="password" name="pswd" placeholder="Password" required="">
+					<button type="submit" class="btns" name="reg_user">Sign up</button>
+				</form>
+			</div>
+
+</div>
+</div>
+    </div>
+
+<script>
+function openForm(){
+    document.getElementById("myOverlay").style.display="block";
+}
+</script>
+<script>
+function closeForm(){
+    document.getElementById("myOverlay").style.display="none";
+}
+</script>
+</body>
 </body>
 </html>

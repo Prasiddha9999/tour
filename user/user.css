@@ -30,8 +30,10 @@
     background-color: rgb(205, 231, 231);
     padding: 20px;
     text-align: center;
-    font-size: 35px; 
-    color:rgb(11, 192, 83)
+    font-size: 40px; 
+    color:rgb(43, 122, 226);
+
+    font-weight:bold;
 }
 .menu{
     background-color:rgb(11, 192, 83)
@@ -60,10 +62,13 @@
 }
 .ad{
     background-color: rgb(254, 254, 255);
-    width:1180px;
+    width:1150px;
     height:100px;
     color:aliceblue;
-    margin-left:210px;
+    margin-left:225px;
+    margin-top:50px;
+    border-style:solid ;
+    border-color: rgb(237, 229, 229);
 }
 .ads{
     width:100%;
@@ -208,4 +213,67 @@ background-color: rgb(26, 161, 26);
     width:70px;
     border-color:rgb(26, 161, 26);
     
+}
+.overlay{
+    height:100%;
+    width:100%;
+    display:none;
+    position:fixed;
+    z-index:1;
+    top:0;
+    left:0;
+    background: rgba(0,0,0,0.7);
+}
+.book-form{
+    width:400px;
+    height:fit-content;
+    background-color:aliceblue;
+    border-style:solid ;
+    border-color: rgb(157, 153, 153);
+    border-radius: 10px;
+    margin:auto;
+    margin-top:70px;
+    padding:5px 20px 10px 20px;
+}
+.inp{
+    position:relative;
+    border-radius: 5px;
+    padding:3px;
+    margin:5px;
+    width:96%;
+    height:40px;
+    margin-bottom:10px;
+
+}
+
+.form{
+  font-size:16px;
+   margin:5px;
+  
+}
+
+.booka{
+  background-color:rgb(43, 122, 226) ;
+  color: aliceblue;
+  border-radius: 5px;
+  padding: 5px;
+  width: fit-content;
+  border-color:rgb(68, 72, 210);
+  margin-left:5px;
+   }
+
+.bookb{
+   background-color:rgb(26, 161, 26);
+   color: aliceblue;
+   border-radius: 5px;
+   padding: 5px;
+   width: fit-content;
+   border-color:rgb(26, 161, 26);
+}
+.closebtn{
+font-size: 40px;
+}
+.bookactive{
+    text-align: center;
+    color: rgb(44, 137, 10);
 }

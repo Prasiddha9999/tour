@@ -27,7 +27,7 @@ require('C:\xampp\htdocs\tour\change_pass.php');
     </div>
 
      <div class="title">
-        <a href="home.php">Tourism Management System</span></a>	
+        <a href="home.php">NepTravels</span></a>	
      </div>
 
      <div class="menu">

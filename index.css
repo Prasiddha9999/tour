@@ -1,13 +1,10 @@
-.container{
-    margin-left:10%;
-    margin-right:10%;
-    border: 1px solid rgb(216, 210, 216);
-    box-shadow: 1px 1px 3px 3px rgb(225, 228, 228);
-    }
-
+body{
+    background-color: rgb(255, 255, 255);
+}
 .first {
-height: 60px;
-width: 50px;
+height: 80px;
+width: 70px;
+margin-top:-15px;
 }
 img{
 max-width: 100%;
@@ -15,26 +12,28 @@ max-height: 100%;
 display: block;
 }
 .firsts{
-margin-top:-45px;
+margin-top:-65px;
 margin-bottom:20px;
 margin-left:70px;
-font-size:large;
+font-size:30px;
+color: rgb(40, 40, 193);
 
 
 }
 .second{
-margin-top:-35px;
+margin-top:-55px;
+
 width:100%;
-height: 300px;
+height: 500px;
 background-image: url('image/second.jpg');
 background-repeat: no-repeat;
 filter: brightness(0.80);
+color:blue;
 
 }
 .third{
 width:100%;
 height: 30px;
-
 }
 .bothlogin{
 display:flex;
@@ -62,12 +61,7 @@ border-radius: 5px;
 .admintext{
 text-decoration: none;
 }
-.fourth{
-width:100%;
-height: 150px;
-background-image: url('image/fourth.jpg'); 
-filter: brightness(0.80);
-}
+
 .gap{
 width:100%;
 height: 40px; 
@@ -109,11 +103,13 @@ grid-template-columns: 30% 20% 30% 20%;
 text-align: left;
 color:rgb(246, 21, 242);
 font-weight: bold;
+font-size: 30px;
 padding-bottom:10px;
 }
 .textb{
 text-align: justify;
 margin-right:10%;
+font-size: 20px;
 }
 .question{
 text-align: center;
@@ -138,30 +134,24 @@ hr.line{
 border-top: 1px dashed rgb(195, 186, 186);
 }
 .secondtexta{
-color: rgb(252, 243, 243);
+color: rgb(255, 255, 255);
 font-weight: bold;
-font-size:50px;  
+font-size:75px;  
 text-align: center;
 padding-top:80px;
 
 }
 .secondtextb{
-color: rgb(255, 255, 255);
+color: rgb(0, 84, 251);
 font-weight: bold;
-font-size:20px;  
+font-size:35px;  
 text-align: center;
 }
-.secondtextc{
-padding-top:30px;
-color: rgb(255, 255, 255);
-font-weight: bold;
-font-size:35px; 
-text-align: center; 
-}
+
 .secondtextd{
-color: rgb(255, 255, 255);
+color: rgb(0, 84, 251);
 font-weight: bold;
-font-size:15px;  
+font-size:35px;  
 text-align: center;
 }
 .book:hover {
