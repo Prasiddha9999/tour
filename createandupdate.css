@@ -1,8 +1,36 @@
-  
 .main{
   margin-left:285px;
+  overflow:hidden;
+  }
+  
+  
+  .header{
+  background-color:#3f188e;
+  height:100px;
+  width:100%;
+  margin-left: 34px;
+  font-size: 50px;
+  text-align: center;
+  
+  color:#f4f4f4;
+  border-style:groove;
+  border-color: #ffffff;
+  }
+  .header>.admins{
+  margin-left: 120px; 
+  color:#f9f9f9;
+  font-size:35px;
+  
+  }
+  .header>.Logout>a{
+  margin-left: 10px; 
+  font-size:30px;
+  color:#f9f9f9;
+  }
+  .Logout>a:hover{
+    color:rgb(193, 52, 52);
+  }
 
-}
 
 .container {
   font-family: Jost;
