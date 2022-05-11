@@ -36,7 +36,7 @@ session_start();
   <div class="header">
     <b>Tourism Management System</b>
     <span class="admins">
-      Admin 
+      Admin /
     </span>
     <span class="Logout">
       <a href="index.php">

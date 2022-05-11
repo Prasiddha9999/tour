@@ -9,8 +9,11 @@ require('db_conn.php');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
+        
         <h3><a href="index.php" class="backbutton">Back to Home</a></h3>
-       <h1 id="heading1">Login Here</h1>
+        <div class="adminimg"><img src="image/admins.png" class="adminimgs"></div>
+        <div class="all">
+       <h1 id="heading1">Administrator</h1>
        <img src="https://img.icons8.com/cute-clipart/344/login-rounded-right.png" alt="Login Logo" style="width:100px; height:100px;">
      <div>
          <form action="admin.php" class="myForm" name="myForm" method="POST">
@@ -28,11 +31,10 @@ require('db_conn.php');
              </div>
          </form>
      </div>
+</div>
      <style>
-     * {
-        box-sizing: border-box;
-        padding: 1px;
-        font-family: Arial, Helvetica, sans-serif;
+      body{
+	background-image:url("image/admin.jpg");
       }
     </style>
     </body>

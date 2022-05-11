@@ -1,18 +1,18 @@
 .backbutton{
     text-decoration: none;
+    margin-top:100%;
 }
 #heading1{
     text-align: center;
     padding: 30px;
+    color:rgb(51, 89, 204);
 }
 img{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
- 
+  width: 50%; 
 }
-
 .myForm{
     max-width:500px;
    margin: auto;
@@ -21,8 +21,7 @@ img{
   .input-container {
     display: flex;
     width: 100%;
-    margin-bottom: 15px;
-    
+    margin-bottom: 15px;  
   }
   .icon {
     padding: 10px;
@@ -56,7 +55,7 @@ img{
     background-color: darkcyan;
   }  
   a:hover{
-    color: blueviolet;
+    color: rgb(255, 255, 255);
 }
 .icon:hover{
     background-color: darkcyan;
@@ -65,9 +64,6 @@ img{
   text-align:center;
   color:red;
 
-}
-.btn.btn-danger:hover{
-  color:rgb(193, 52, 52);
 }
 
 .box{
@@ -126,10 +122,8 @@ font-size:35px;
 .header>.Logout>a{
 margin-left: 10px; 
 font-size:30px;
-color:#f9f9f9;
-}
-.Logout>a:hover{
-  color:rgb(193, 52, 52);
+color:#8083cc;
+text-decoration: underline;
 }
 
 
@@ -156,4 +150,36 @@ color:#f9f9f9;
   padding: 20px;
   font-size: 30px;
   text-align: center;
+}
+.backbutton{
+  background-color:rgb(51, 89, 204);
+  color:rgb(211, 211, 211);
+  padding:7px;
+  border-radius:5px;
+  margin-top:-500px;
+  background-repeat: no-repeat;
+
+
+}
+.all{
+background-color:rgb(159, 228, 168);
+border-radius: 10px;
+box-shadow: 5px 20px 50px rgb(117, 111, 111);
+width:550px;
+height:100%;
+overflow: hidden;
+margin-top:-42px;
+align-content: right;
+
+float: right;
+}
+.adminimgs{
+  width:400px;
+  height:400px;
+}
+.adminimg{
+  margin-left:250px;
+  margin-top:100px;
+float:left;
+position:absolute;
 }
