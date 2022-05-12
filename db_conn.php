@@ -71,7 +71,7 @@ if (isset($_POST['login_user'])) {
 
 /* This is checking if the email and password are empty. */
 if(empty($email) || empty($password)){
-  echo '<script type = "text/javascript"> alert("Please fill out all the forms") </script>';
+    array_push($errors, "Error while signing user");
 }
 
   if (count($errors) == 0) {
@@ -79,15 +79,19 @@ if(empty($email) || empty($password)){
   	$query = "SELECT * FROM signup WHERE email='$email' AND password='$password'";
   	$results = mysqli_query($db, $query);
   	if (mysqli_num_rows($results) == 1) {
+      $rows = mysqli_fetch_object($results);
+      if($rows->status == '1'){
   	  $_SESSION['user_email'] = $email;
       $_SESSION['UID']= $row['id'];
-  	  $_SESSION['success'] = "You are now logged in";
   	  header('location: user/home.php');
       die();
-  	}else {
-  		 array_push($errors, "Username or password wrong");
   	}
+    else{
+      echo '<script type = "text/javascript"> alert("You cannot login beacuse admin has banned you") </script>';
+    }
   }
+  }
+  
 }
 
 

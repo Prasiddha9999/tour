@@ -6,7 +6,7 @@ include('db_conn.php');
 //   die();
 // }
 
-$result = mysqli_query($db,"SELECT * FROM signup");
+
  
 
 ?>
@@ -55,41 +55,44 @@ $result = mysqli_query($db,"SELECT * FROM signup");
       <table style="width:96%">
           <tr>
             <th>S.N</th>
+            <th>User ID</th>
             <th>Name</th>
             <th>Mobile No.</th>
             <th>Email</th>
             <th>Current Status</th>
-            <th>CHange Status</th>
+            <th>change Status</th>
       
           </tr>
           <tbody>
             <?php 
+             $query= "SELECT * FROM signup";
+             $data= mysqli_query($db,$query);
             /* Used to display the serial number of the table. */
             $i = 1;
             /* Fetching the data from the database and displaying it in the table. */
-            while($row = mysqli_fetch_assoc($result)){
+            while($row = mysqli_fetch_array($data)){
             ?>
           <tr>
             <th scope ="row"> <?php echo $i ?> </th>
+            <td><?php echo $row['id'] ?> </td>
             <td><?php echo $row['username'] ?> </td>
             <td><?php echo $row['phonenumber'] ?></td>
             <td><?php echo $row['email'] ?></td>
-            <td> 
-              <?php 
-            if($row['status']==1){
-              echo "<p id=str".$row['id'].">Active</p>";
+            <td> <?php if($row['status']==1){
+              echo 'User Active';
             }
             else{
-              echo "<p id=str".$row['id'].">Disactive</p>";
-            } ?></td>  
-            <td>
-              <select onchange="active_disactive_user(this.value,<?php echo $row['id'];?>)">
-              <option value="1">Active</option>
-              <option value="0">Disactive</option>
-
-          </select>
-            <!-- <button> Activate</button> <button>Deactivate</button></td>   -->
+              echo 'User Banned';
+            } ?></td> 
+            <td><?php 
+            if($row['status']==1){
+              echo '<p><a href="status.php?d_id='.$row['id'].'&status=0">Active</a></p>';
+            }
+            else{
+              echo '<p><a href="status.php?d_id='.$row['id'].'&status=1">Deactive</a></p>';
+            } ?></td>
           </tr>
+          
 
           <?php 
 
@@ -124,7 +127,7 @@ $result = mysqli_query($db,"SELECT * FROM signup");
   
     </style>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
   function active_disactive_user(val, id){
     $.ajax({
@@ -145,7 +148,7 @@ $result = mysqli_query($db,"SELECT * FROM signup");
     });
   }
 
-  </script>
+  </script> -->
 
 
 </html>
