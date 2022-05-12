@@ -53,7 +53,7 @@ $res = mysqli_query($db,"SELECT * FROM create_package");
            
             /* Fetching the data from the database and displaying it in the table. */
             while($row = mysqli_fetch_assoc($res)){
-                while($i<=2){
+                while($i<=1){
             ?>
                         
                 <div class="room">

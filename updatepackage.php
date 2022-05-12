@@ -1,5 +1,6 @@
 <?php 
 include('db_conn.php');
+include('update_pac.php');
 
 session_start();
 // if(!isset($_SESSION['UID'])){
@@ -48,10 +49,11 @@ session_start();
 
          <div class="container">
                    <div class="tab-content">
-              <form action="package.php" class="forms" name="package" method="POST" enctype="multipart/form-data">
+              <form action="" class="forms" name="package" method="POST" enctype="multipart/form-data">
                 <h3>Update Package</h3>
                 <?php
                           $currentUser = $_GET['updateid'];
+                          $_SESSION['currentu'] = $currentUser;
                           $sql = "SELECT * FROM create_package WHERE id = '$currentUser'";
                           $gotResult = mysqli_query($db,$sql);
                           if($gotResult){
@@ -62,7 +64,7 @@ session_start();
                 <div class="form-group">
                   <label for="focusedinput" class="tit">Booking Id</label>
                     <div class="input-text">
-                    <input type="text" id="id" name="p_id" placeholder="Booking id" value="<?php echo $row['id']?>" readonly>
+                    <input type="text" id="id" name="p_id" placeholder="Booking id" value="<?php echo $_SESSION['currentu']?>" readonly>
                     </div>
                 </div>
 

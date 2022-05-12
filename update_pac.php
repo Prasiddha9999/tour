@@ -4,17 +4,16 @@
 
 // error_reporting(0);
 include('db_conn.php');
-include('package-list.php');
 
-$id = $_GET['updateid'];
+$id = $_SESSION['currentu'];
 if(isset($_POST['p_submit'])){
 
- $pName = mysqli_real_escape_string($db,$_POST['p_name']);
- $pType = mysqli_real_escape_string($db,$_POST['p_type']);
- $pLocation = mysqli_real_escape_string($db,$_POST['p_location']);
- $pPrice = mysqli_real_escape_string($db,$_POST['p_price']);
- $pFeatures = mysqli_real_escape_string($db,$_POST['p_features']);
- $pDetails =mysqli_real_escape_string($db, $_POST['p_details']);
+ $pName = $_POST['p_name'];
+ $pType = $_POST['p_type'];
+ $pLocation = $_POST['p_location'];
+ $pPrice = $_POST['p_price'];
+ $pFeatures = $_POST['p_features'];
+ $pDetails = $_POST['p_details'];
  
  // Storing Image
  $pImage = $_FILES['p_image'];
@@ -35,7 +34,7 @@ if(isset($_POST['p_submit'])){
 
  //Checking if the user image extension is correct or not
  if(in_array($imageCheck,$imageExtstored)){
-     $destinationFile = 'upload/'.$imageName; #Saving image to local folder
+     $destinationFile = 'user/upload/'.$imageName; #Saving image to local folder
      move_uploaded_file($imageTmp,$destinationFile); #Moving tmproary file to folder
 
  }
@@ -54,8 +53,7 @@ if(isset($_POST['p_submit'])){
 
 if($query_run){
     /* A javascript alert that is being echoed out to the user. */
-    echo '<script type = "text/javascript"> alert("User Information updated") </script>';
-
+    header("location:package-list.php");
   }
 else{
     echo '<script type = "text/javascript"> alert("User Information not updated") </script>';
