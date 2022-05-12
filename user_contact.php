@@ -30,7 +30,6 @@ forms, it will alert the user to fill out all the forms. */
         mysqli_query($db, $query);
 
         
-        /* Redirecting the user to the contact page. */
         echo '<script type = "text/javascript"> alert("User enquiry has been updated") </script>';
         }
       }

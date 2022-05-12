@@ -2,6 +2,7 @@
 session_start();
 include('D:\Softwares\Xammp\htdocs\tour\db_conn.php');
 include('D:\Softwares\Xammp\htdocs\tour\show_booked_pac.php');
+session_start();
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -41,15 +42,7 @@ include('D:\Softwares\Xammp\htdocs\tour\show_booked_pac.php');
             <li class="list"><a href="privacypolicy.php">Privacy Policy</a></li>
             <li class="list"><a href="contact.php">Contact Us</a></li>
         </ul>
-    </div>
-    <?php 
-    /* This is checking if the session variable `book_status` is set and if it is not empty. */
-    if(isset($_SESSION['book_status']) && $_SESSION['book_status'] !=''){
-        echo $_SESSION['book_status'];
-        /* Unsetting the session variable `book_status` */
-        unset($_SESSION['book_status']);
-    }
-    ?>
+</div>
 
     <div class="namelist">Package Details</div>
 
@@ -59,6 +52,7 @@ include('D:\Softwares\Xammp\htdocs\tour\show_booked_pac.php');
         <h3>Package Details</h3>  
         <?php
                           $currentPackage = $_GET['newid'];
+                          $_SESSION['currentp'] = $currentPackage;
                           $sql = "SELECT * FROM create_package WHERE id = '$currentPackage'";
                           $gotResult = mysqli_query($db,$sql);
                           if($gotResult){
@@ -73,7 +67,7 @@ include('D:\Softwares\Xammp\htdocs\tour\show_booked_pac.php');
                     </div>
                     <div class="pacakge-details">
                         <h4>Package Name: <?php echo $row['pac_name']?> </h4>
-                        <h4>Booking ID: <?php echo $row['id']?></h4>
+                        <h4>Booking ID: <?php echo $_SESSION['currentp']?></h4>
                         <h6>Package Type : <?php echo $row['pac_type']?></h6>
                         <p><b>Package Location :<?php echo $row['pac_location']?> </p>
                         <p><b>Features : <?php echo $row['pac_features']?></b></p>
@@ -117,8 +111,10 @@ include('D:\Softwares\Xammp\htdocs\tour\show_booked_pac.php');
         <div class="book-form">
         <span class="closebtn" onclick = "closeForm()" title = "Close Overlay"> &#215 </span>
         <br><br>
-        <label for="Name" class="form">Booking ID</label><br>
-        <input type="ID" class="inp" value="<?php echo $currentPackage ?>" readonly name="b_id"><br>    
+        <label for="Bid" class="form">Booking ID</label><br>
+        <input type="ID" class="inp" value="<?php echo $_SESSION['currentp']?>" readonly name="b_id"><br>
+        <label for="Uid" class="form">User ID</label><br>
+        <input type="ID" class="inp" value="<?php echo $_SESSION['currenti']?>" readonly name="p_id"><br>     
         <label for="Name" class="form">Full Name</label><br>
         <input type="text" class="inp" placeholder="Full Name" name="b_name" required><br>
         <label for="Address" class="form">Address</label><br>
@@ -134,7 +130,7 @@ include('D:\Softwares\Xammp\htdocs\tour\show_booked_pac.php');
         <label for="Comment" class="form">Comment</label><br>
         <input type="text" class="inp" placeholder="Please Give Detailed information(Optional)" name="b_comment"><br>
         <p class="bookactive"><?php $_SESSION['book_success'] ?> </p>
-        <button type="submit" class="booka"  name="book_package" >Book Now</button>
+        <input type="submit" class="booka"  name="book_package" value="Book Now"></button>
         <span><input class="bookb" type="submit" value="Pay Online Now"></span>
         
         </form>

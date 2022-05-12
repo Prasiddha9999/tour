@@ -58,18 +58,19 @@ error_reporting(0);
                           <form action="" method="post">
                           <?php
                           $currentUser = $_SESSION['user_email'];
+                          $_SESSION['currente']= $currentUser;
                           $sql = "SELECT * FROM signup WHERE email = '$currentUser'";
                           $gotResult = mysqli_query($db,$sql);
                           if($gotResult){
                               if(mysqli_num_rows($gotResult)>0){
                                   while($row = mysqli_fetch_array($gotResult)){
-                                    
+                                    $_SESSION['currenti']= $row['id'];
                                 ?>
                           <label for="id">User ID </label>
-                            <input type="text" id="id" name="user_id" value="<?php echo $row['id'] ?>" readonly>
+                            <input type="text" id="id" name="user_id" value="<?php echo $_SESSION['currenti'] ?>" readonly>
 
                             <label for="email">User Email Address</label>
-                            <input type="text" id="email" name="user_emailaddress" value="<?php echo $row['email'] ?>" readonly>
+                            <input type="text" id="email" name="user_emailaddress" value="<?php echo $_SESSION['currente'] ?>" readonly>
 
                             <label for="fname">First Name</label>
                             <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
