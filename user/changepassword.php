@@ -58,7 +58,7 @@ require('C:\xampp\htdocs\tour\change_pass.php');
                             <label for="password">Old Password</label><br>
                             <input type="password" id="password" name="o_pwd" placeholder="Your old Password"><br><br>
                             <label for="cpassword">New password</label><br>
-                            <input type="password" id="cpassword" name="c_pwd" placeholder="Conform New Password"><br><br>
+                            <input type="password" id="cpassword" name="c_pwd" placeholder="Confirm New Password"><br><br>
                         <br>
                             <input type="submit" class="sub" value="Change" name ="change_pass">
                           </form>
@@ -83,7 +83,7 @@ require('C:\xampp\htdocs\tour\change_pass.php');
         }
         
         .sub {
-          background-color:  rgb(26, 161, 26);
+          background-color:  rgb(35, 202, 35);
           color: white;
           padding: 12px 20px;
           border: none;
@@ -92,7 +92,7 @@ require('C:\xampp\htdocs\tour\change_pass.php');
         }
         
         input[type=submit]:hover {
-          background-color: rgb(26, 161, 26);
+          background-color: #28ec32;
         }
         
         .container {

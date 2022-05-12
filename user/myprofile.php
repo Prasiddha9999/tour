@@ -104,7 +104,7 @@ include('C:\xampp\htdocs\tour\update_user.php');
         }
         
         .sub {
-          background-color:  rgb(26, 161, 26);
+          background-color:  rgb(35, 202, 35);
           color: white;
           padding: 12px 20px;
           border: none;
@@ -113,7 +113,7 @@ include('C:\xampp\htdocs\tour\update_user.php');
         }
         
         input[type=submit]:hover {
-          background-color: rgb(26, 161, 26);
+          background-color:#28ec32;
         }
         
         .container {
