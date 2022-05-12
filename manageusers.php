@@ -1,15 +1,12 @@
 <?php
 session_start();
 include('db_conn.php');
-include('update_user_status.php');
 // if(!isset($_SESSION['UID'])){
 //   header('location:index.php');
 //   die();
 // }
 
-/* Used to display the current time. */
-$time = time();
-$res = mysqli_query($db,"SELECT * FROM signup");
+$result = mysqli_query($db,"SELECT * FROM signup");
  
 
 ?>
@@ -20,8 +17,10 @@ $res = mysqli_query($db,"SELECT * FROM signup");
 	<link rel="stylesheet" href="admin.css" type="text/css"/>
   <link rel="stylesheet" href="seperates.css" type="text/css"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 
 
@@ -59,29 +58,37 @@ $res = mysqli_query($db,"SELECT * FROM signup");
             <th>Name</th>
             <th>Mobile No.</th>
             <th>Email</th>
-            <th>Status</th>
+            <th>Current Status</th>
+            <th>CHange Status</th>
       
           </tr>
-          <tbody id ="user_grid">
+          <tbody>
             <?php 
             /* Used to display the serial number of the table. */
             $i = 1;
             /* Fetching the data from the database and displaying it in the table. */
-            while($row = mysqli_fetch_assoc($res)){
-              $status = 'Offline';
-              $class = "btn-danger";
-              /* This is used to display the status of the user. */
-              if($row['last_login']>$time){
-                $status = 'Online';
-                $class = "btn-success";
-              }
+            while($row = mysqli_fetch_assoc($result)){
             ?>
           <tr>
             <th scope ="row"> <?php echo $i ?> </th>
             <td><?php echo $row['username'] ?> </td>
             <td><?php echo $row['phonenumber'] ?></td>
             <td><?php echo $row['email'] ?></td>
-            <td> <button type="button" class= "btn <?php echo $class ?>"><?php echo $status ?></button></td>  
+            <td> 
+              <?php 
+            if($row['status']==1){
+              echo "<p id=str".$row['id'].">Active</p>";
+            }
+            else{
+              echo "<p id=str".$row['id'].">Disactive</p>";
+            } ?></td>  
+            <td>
+              <select onchange="active_disactive_user(this.value,<?php echo $row['id'];?>)">
+              <option value="1">Active</option>
+              <option value="0">Disactive</option>
+
+          </select>
+            <!-- <button> Activate</button> <button>Deactivate</button></td>   -->
           </tr>
 
           <?php 
@@ -90,43 +97,12 @@ $res = mysqli_query($db,"SELECT * FROM signup");
         $i++;
 
         } 
-        
+      
+
         ?>
 </tbody>
           </table>
-  </div> 
-  <script>
-  function updateUserStatus(){
-    /* Used to update the status of the user. */
-    jQuery.ajax({
-      url:'update_user_status.php',
-      success:function(){}
-    });
-  }
-
-  function getUserStatus(){
-    /* Used to update the status of the user. */
-    jQuery.ajax({
-      url:'get_user_status.php',
-      success:function(result){
-        jQuery('#user_grid').html(result);
-
-      }
-    });
-  }
-
-  setInterval(function(){
-    updateUserStatus();
-
-  },/* Used to update the status of the user after every 5 seconds. */
-  5000);
-
-  setInterval(function(){
-    getUserStatus();
-
-  },/* Used to update the status of the user after every 5 seconds. */
-  10000);
-  </script>     
+  </div>     
     
 </div>
  
@@ -148,6 +124,28 @@ $res = mysqli_query($db,"SELECT * FROM signup");
   
     </style>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+  function active_disactive_user(val, id){
+    $.ajax({
+      type:'post',
+      url:'change.php',
+      data:{val:val,id:id},
+
+      success: function(result){
+        if(result==1){
+          $('#str'+ id).html('Active');
+
+        }else{
+          $('#str'+ id).html('Disactive');
+        }
+      }
+
+
+    });
+  }
+
+  </script>
 
 
 </html>

@@ -1,4 +1,11 @@
 
+
+<?php
+
+include('db_conn.php');
+$res = mysqli_query($db,"SELECT * FROM user_contact");
+?>
+
 <!Doctype HTML>
 <html>
 <head>

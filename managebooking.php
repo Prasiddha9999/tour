@@ -1,4 +1,9 @@
+<?php
 
+
+include('db_conn.php');
+$res = mysqli_query($db,"SELECT * FROM booked_pac_info");
+?>
 <!Doctype HTML>
 <html>
 <head>
@@ -56,14 +61,14 @@
             while($row = mysqli_fetch_assoc($res)){
             ?>
           <tr>
-            <td>1</td>
-            <td><?php echo $row['fname'] ?></td>
-            <td><?php echo $row['fname'] ?></td>
-            <td><?php echo $row['fname'] ?></td>
-            <td><?php echo $row['fname'] ?></td>
-            <td><?php echo $row['fname'] ?></td>
-            <td><?php echo $row['fname'] ?></td>
-            <td><?php echo $row['fname'] ?></td>
+            <th scope ="row"> <?php echo $i ?> </th>
+            <td><?php echo $row['bookingid'] ?></td>
+            <td><?php echo $row['fullname'] ?></td>
+            <td><?php echo $row['mobilenumber'] ?></td>
+            <td><?php echo $row['emailaddress'] ?></td>
+            <td><?php echo $row['startingdate'] ?></td>
+            <td><?php echo $row['comment'] ?></td>
+            <td><?php echo $row['status'] ?></td>
             <td></td>
           </tr>
           <?php 

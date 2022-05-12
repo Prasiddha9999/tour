@@ -100,14 +100,6 @@ if (isset($_POST['reg_user'])) {
   $phonenumber = mysqli_real_escape_string($db, $_POST['num']);
   $address = mysqli_real_escape_string($db, $_POST['address']);
 
-  // form validation: ensure that the form is correctly filled ...
-  // by adding (array_push()) corresponding error unto $errors array
-  if (empty($username)) { array_push($errors, "Username is required"); }
-  if (empty($email)) { array_push($errors, "Email is required"); }
-  if (empty($password)) { array_push($errors, "Password is required"); }
-  if (empty($phonenumber)) { array_push($errors, "Phone Number is required"); }
-  if (empty($address)) { array_push($errors, "Address is required"); }
-
   // first check the database to make sure 
   // a user does not already exist with the same username and/or email
   $user_check_query = "SELECT * FROM signup WHERE username='$username' OR email='$email' LIMIT 1";
@@ -117,15 +109,10 @@ if (isset($_POST['reg_user'])) {
   $user = mysqli_fetch_assoc($result);
   
   if ($user) { // if user exists
-    if ($user['username'] === $username) {
-      array_push($errors, "Username already exists");
-    }
-
-    if ($user['email'] === $email) {
-      array_push($errors, "email already exists");
+    if ($user['username'] === $username or $user['email'] === $email) {
+      array_push($errors, "Username or email address already exists");
     }
   }
-
   // Finally, register user if there are no errors in the form
   if (count($errors) == 0) {
       // $password = md5($password_1);//encrypt the password before saving in the database

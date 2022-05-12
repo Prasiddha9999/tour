@@ -1,0 +1,81 @@
+<!Doctype HTML>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="admin.css" type="text/css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<body>
+	
+	<div id="mySidenav" class="sidenav">
+	<p class="logo"><span>T</span>ravel</p>
+  <a href="#" class="icon-a"><i class="fa fa-dashboard icons"></i> &nbsp;&nbsp;Dashboard</a>
+  <a href="#"class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Tour Packages</a>
+  <a href="#"class="icon-a"><i class="fa fa-users icons"></i> &nbsp;&nbsp;Manage Users</a>
+  <a href="#"class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Manage Booking</a>
+  <a href="#"class="icon-a"><i class="fa fa-tasks icons"></i> &nbsp;&nbsp;Manage Issues</a>
+  <a href="#"class="icon-a"><i class="fa fa-user icons"></i> &nbsp;&nbsp;Manage Enquiries</a>
+  <a href="#"class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Manage Pages</a>
+  
+
+</div>
+<div id="main">
+
+	<div class="head">
+		<div class="col-div-6">
+<span style="font-size:40px;cursor:pointer; color: black;" class="nav"  > Tour Management System</span>
+</div>
+<div class="col-div-6">
+	<div class="page">
+
+		
+		<p>Welcome To Administrative</p>
+	</div>
+</div>
+	
+</div>
+	<div class="clearfix"></div>
+</div>
+
+	<div class="clearfix"></div>
+	<br/>
+	
+	<div class="col-div-3">
+		<div class="box">
+			<p>67<br/><span>Users</span></p>
+			<i class="fa fa-users box-icon"></i>
+		</div>
+	</div>
+	<div class="col-div-3">
+		<div class="box">
+			<p>88<br/><span>Bookings</span></p>
+			<i class="fa fa-list box-icon"></i>
+		</div>
+	</div>
+	<div class="col-div-3">
+		<div class="box">
+			<p>99<br/><span>Enquiries</span></p>
+			<i class="fa fa-list box-icon"></i>
+		</div>
+	</div>
+  
+	<div class="col-div-3">
+		<div class="box">
+			<p>78<br/><span>Total Packages</span></p>
+			<i class="fa fa-tasks box-icon"></i>
+		</div>
+	</div>
+  <div class="col-div-3">
+		<div class="box">
+			<p>78<br/><span>Issue Raised</span></p>
+			<i class="fa fa-tasks box-icon"></i>
+		</div>
+	</div>
+	
+
+</body>
+
+
+</html>

@@ -120,7 +120,7 @@ margin-top:1px;
 .error {
     color: rgb(218, 57, 57);
     position: ABSOLUTE;
-    margin-top: 250px;
+	margin-top: 400px;
     width: 100%;
 	text-align:center ;
 }
