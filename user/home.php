@@ -58,7 +58,7 @@ $res = mysqli_query($db,"SELECT * FROM create_package");
                         
                 <div class="room">
                     <div class="packageimage">
-                        <img src="packageimage.png" class="packageimg" alt="">
+                        <img src="<?php echo $row['pac_image'] ?>" class="packageimg" alt="">
                     </div>
                     <div class="pacakge-details">
                         <h4>Package Name: <?php echo $row['pac_name'] ?></h4>

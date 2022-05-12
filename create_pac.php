@@ -15,11 +15,13 @@ if (isset($_POST['package_submit'])) {
     $pacPrice = mysqli_real_escape_string($db, $_POST['package_price']);
     $pacFeatures = mysqli_real_escape_string($db, $_POST['package_features']);
     $pacDetails = mysqli_real_escape_string($db, $_POST['package_details']);
+    $pacTimeStart = mysqli_real_escape_string($db, $_POST['package_time_start']);
+    $pacTimeEnd = mysqli_real_escape_string($db, $_POST['package_time_end']);
 
 
 /* This is checking if the user has filled out all the forms. If the user has not filled out all the
 forms, it will alert the user to fill out all the forms. */
-if(empty($pacName) || empty($pacType) || empty($pacLocation)|| empty($pacPrice)|| empty($pacFeatures)|| empty($pacDetail)){
+if(empty($pacName) || empty($pacType) || empty($pacLocation)|| empty($pacPrice)|| empty($pacFeatures)|| empty($pacDetail)|| empty($pacTimeStart)|| empty($pacTimeEnd)){
   echo '<script type = "text/javascript"> alert("Please fill out all the forms") </script>';
 }
 
@@ -59,7 +61,7 @@ if(empty($pacName) || empty($pacType) || empty($pacLocation)|| empty($pacPrice)|
 
     //Checking if the user image extension is correct or not
     if(in_array($imageCheck,$imageExtstored)){
-        $destinationFile = 'upload/'.$imageName; #Saving image to local folder
+        $destinationFile = 'user/upload/'.$imageName; #Saving image to local folder
         move_uploaded_file($imageTmp,$destinationFile); #Moving tmproary file to folder
 
     }
@@ -74,25 +76,24 @@ if(empty($pacName) || empty($pacType) || empty($pacLocation)|| empty($pacPrice)|
 
     // Finally, create package if there are no errors in the form
     if (count($errors) == 0) {  
-        $query = "INSERT INTO create_package(pac_name, pac_type,pac_location,pac_price,pac_features,pac_details,pac_image) 
-                  VALUES('$pacName', '$pacType', '$pacLocation', '$pacPrice', '$pacFeatures','$pacDetails','$destinationFile')";
+      $query = "INSERT INTO create_package(pac_name, pac_type,pac_location,pac_price,pac_features,pac_details,pac_image,pac_time_start,pac_time_end) 
+      VALUES('$pacName', '$pacType', '$pacLocation', '$pacPrice', '$pacFeatures','$pacDetails','$destinationFile','$pacTimeStart','$pacTimeEnd')";
         $query = mysqli_query($db, $query);
         $_SESSION['success'] = "Your package is created";
         header('location: package-list.php');
 
         $displayquery = "SELECT * FROM create_package"; //retriving image from database
-        $result = mysqli_query($db,$displayquery);
-        $resultCheck = mysqli_num_rows($result);
+        $querydisplay = mysqli_query($db,$displayquery);
 
-    if($resultCheck > 0){
-      while( $row = mysqli_fetch_assoc($result)){
+    if($result > 0){
+      while( $result = mysqli_fetch_array($rquerydisplay)){
         ?>
         <tr>
-        <td><?php echo $row['pac_name']; ?></td>
-        <td><?php echo $row['pac_type'];?></td>
-        <td><?php echo $row['pac_location'];?></td>
-        <td><?php echo $row['pac_price'];?></td>
-        <td><?php echo $row['pac_features'];?></td>
+        <td><?php echo $result['pac_name']; ?></td>
+        <td><?php echo $result['pac_type'];?></td>
+        <td><?php echo $result['pac_location'];?></td>
+        <td><?php echo $result['pac_price'];?></td>
+        <td><?php echo $result['pac_features'];?></td>
 
         </tr>
         

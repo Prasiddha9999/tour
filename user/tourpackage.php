@@ -62,12 +62,13 @@ $res = mysqli_query($db,"SELECT * FROM create_package");
                 $pacTimeStart = $row['pac_time_start'];
                 $pacTimeEnd = $row['pac_time_end'];
                 $pacDescription =$row['pac_detail'];
+                $pacImage =$row['pac_image'];
                
                 echo '
                         
                 <div class="room">
                     <div class="packageimage">
-                        <img src="packageimage.png" class="packageimg" alt="">
+                        <img src="'.$pacImage.'" class="packageimg" alt="">
                     </div>
                     <div class="pacakge-details">
                         <h4>Package Name: '.$pacName.' </h4>

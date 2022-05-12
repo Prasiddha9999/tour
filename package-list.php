@@ -59,6 +59,9 @@ $res = mysqli_query($db,"SELECT * FROM create_package");
             <th>Location</th>
             <th>Price</th>
             <th>Package Type</th>
+            <th>Package Start Date</th>
+            <th>Package End Date</th>
+            <th>Package Image</th>
             <th>Action</th>
             <th>Action</th>
           </tr>
@@ -73,6 +76,9 @@ $res = mysqli_query($db,"SELECT * FROM create_package");
               $pacLocation = $row['pac_location'];
               $pacPrice = $row['pac_price'];
               $pacType = $row['pac_type'];
+              $pacTimeStart = $row['pac_time_start'];
+              $pacTimeEnd = $row['pac_time_end'];
+              $pacImage = $row['pac_image'];
 
               echo '
        
@@ -83,6 +89,9 @@ $res = mysqli_query($db,"SELECT * FROM create_package");
             <td>'.$pacLocation.'</td>
             <td>'.$pacPrice.' </td>
             <td>'.$pacType.'</td>
+            <td>'.$pacTimeStart.'</td>
+            <td>'.$pacTimeEnd.'</td>
+            <td><img src=" '.$pacImage.'" height="100px" width="100px"></td>
             <td><button class="btn btn-primary"><a href="updatepackage.php?updateid='.$id.'" class="text-light">Edit/Update</a></button></td>
             <form action ="delete.php" method="post">
               <input type="hidden" name="pac_id" value='.$id.'>

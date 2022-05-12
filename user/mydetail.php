@@ -69,7 +69,7 @@ include('D:\Softwares\Xammp\htdocs\tour\show_booked_pac.php');
                 <div class="det">
                     <div class="dets">
                     <div class="packageimage">
-                        <img src="packageimage.png" class="packageimg" alt="">
+                        <img src="<?php echo $row['pac_image'] ?>" height="300px" width="400px">
                     </div>
                     <div class="pacakge-details">
                         <h4>Package Name: <?php echo $row['pac_name']?> </h4>
