@@ -88,7 +88,7 @@ input{
     position:absolute;
 }
 .openbtn:hover{
-	background: #6327d1;
+	background: #3676ff;
 }
 .topbtn{
 margin-top:1px;
@@ -103,6 +103,9 @@ margin-top:1px;
 .signups label{
 	color: #3b69cc;
 	transform: scale(.6);
+}
+.signups label:hover{
+	color:#3676ff;
 }
 
 #chk:checked ~ .signups{

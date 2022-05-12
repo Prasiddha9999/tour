@@ -21,12 +21,12 @@
 					<div class="container">
                     <div class="bothlogin">
                     
-        <div class="third"><div class="first"><img src="image/logos.png"></div><div class="firsts">Neptravels</div></div>
+        <div class="third"><div class="first"><img src="image/logos.png"></div><div class="firsts">NepTravels</div></div>
        
         </div>
        
         <div class="second">
-            <p class="secondtexta">Neptravels</p>
+            <p class="secondtexta">NepTravels</p>
           
          
         </div>
@@ -67,7 +67,7 @@
         <br>
         <div class="question">Questions?</div>
         <br>
-        <div class="questiontext">Hello wellcome our system</div>
+        <div class="questiontext">Let's get connected with our System</div>
         <br>
         <hr class="line">
         <div class="third"><button type="submit" class="book" name="book_page">Book Now</button></div>
