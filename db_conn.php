@@ -78,7 +78,8 @@ if(empty($email) || empty($password)){
   	// $password = md5($password);
   	$query = "SELECT * FROM signup WHERE email='$email' AND password='$password'";
   	$results = mysqli_query($db, $query);
-  	if (mysqli_num_rows($results) == 1) {
+  	/* This is checking if the user is logged in. */
+    if (mysqli_num_rows($results) == 1) {
       $rows = mysqli_fetch_object($results);
       if($rows->status == '1'){
   	  $_SESSION['user_email'] = $email;

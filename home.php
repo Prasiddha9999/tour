@@ -1,4 +1,5 @@
 <?php
+require('db_conn.php');
 require('create_pac.php');
 require('error.php');
 ?>
@@ -42,25 +43,53 @@ require('error.php');
     <div class="boxas">
     <i class="fa fa-users icons"></i>
     <p>Users</p>
-    <p>.....</p>
+    <?php
+    /* Selecting the id from the signup table and ordering it by id. */
+    $query = "SELECT id FROM signup ORDER BY id";
+    $query_run = mysqli_query($db,$query);
+
+    $row = mysqli_num_rows($query_run);
+    echo '<p> '.$row.' </p>';
+    ?>
     </div>  
 
     <div class="boxas">
     <i class="fa fa-list icons"></i>
     <p>Bookings</p>
-    <p>.....</p>
+    <?php
+    /* Selecting the id from the signup table and ordering it by id. */
+    $query = "SELECT id FROM booked_pac_info ORDER BY id";
+    $query_run = mysqli_query($db,$query);
+
+    $row = mysqli_num_rows($query_run);
+    echo '<p> '.$row.' </p>';
+    ?>
     </div>  
 
     <div class="boxas">
     <i class="fa fa-list icons"></i>
     <p>Total Package</p>
-    <p>.....</p>
+    <?php
+    /* Selecting the id from the signup table and ordering it by id. */
+    $query = "SELECT id FROM create_package ORDER BY id";
+    $query_run = mysqli_query($db,$query);
+
+    $row = mysqli_num_rows($query_run);
+    echo '<p> '.$row.' </p>';
+    ?>
     </div>  
 
     <div class="boxas">
     <i class="fa fa-user icons"></i>
     <p>Enquries</p>
-    <p>.....</p>
+    <?php
+    /* Selecting the id from the signup table and ordering it by id. */
+    $query = "SELECT id FROM user_contact ORDER BY id";
+    $query_run = mysqli_query($db,$query);
+
+    $row = mysqli_num_rows($query_run);
+    echo '<p> '.$row.' </p>';
+    ?>
     </div>  
 
     </div>

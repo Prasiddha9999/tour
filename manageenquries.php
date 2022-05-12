@@ -49,6 +49,8 @@ $res = mysqli_query($db,"SELECT * FROM user_contact");
       
           <tr>
             <th>S.N</th>
+            <th>User Id</th>
+            <th>Email Address</th>
             <th>Name</th>
             <th>Mobile Number</th>
             <th>Country</th>
@@ -65,6 +67,8 @@ $res = mysqli_query($db,"SELECT * FROM user_contact");
             ?>
           <tr>
             <td scope ="row"> <?php echo $i ?> </td>
+            <td><?php echo $row['userid'] ?></th>
+            <td><?php echo $row['useremail'] ?></th>
             <td><?php echo $row['fname'] ?><?php echo " " ?><?php echo $row['lname'] ?> </td>
             <td><?php echo $row['mob_num'] ?></th>
             <td><?php echo $row['country'] ?></td>

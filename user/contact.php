@@ -1,6 +1,7 @@
 <?php
 session_start();
 require('D:\Softwares\Xammp\htdocs\tour\user_contact.php');
+require('D:\Softwares\Xammp\htdocs\tour\db_conn.php');
 error_reporting(0);
 ?>
 <!DOCTYPE HTML>
@@ -55,19 +56,42 @@ error_reporting(0);
 
                         <div class="container">
                           <form action="" method="post">
+                          <?php
+                          $currentUser = $_SESSION['user_email'];
+                          $sql = "SELECT * FROM signup WHERE email = '$currentUser'";
+                          $gotResult = mysqli_query($db,$sql);
+                          if($gotResult){
+                              if(mysqli_num_rows($gotResult)>0){
+                                  while($row = mysqli_fetch_array($gotResult)){
+                                    
+                                ?>
+                          <label for="id">User ID </label>
+                            <input type="text" id="id" name="user_id" value="<?php echo $row['id'] ?>" readonly>
+
+                            <label for="email">User Email Address</label>
+                            <input type="text" id="email" name="user_emailaddress" value="<?php echo $row['email'] ?>" readonly>
+
                             <label for="fname">First Name</label>
-                            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                            <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
                         
                             <label for="lname">Last Name</label>
-                            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                            <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+
+                            <label for="number">Mobile Number</label>
+                            <input type="text" id="num" name="mob_num" placeholder="Your Mobile Number.." required>
                         
-                            <label for="country">Country</label>
-                            <input type="text" id="country" name="country" placeholder="Your Country..">
+                            <label for="country">Location</label>
+                            <input type="text" id="loc" name="country" placeholder="Your Location.." required>
                         
-                            <label for="subject">Subject</label>
+                            <label for="subject">Enquiry</label>
                             <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
                         
                             <input type="submit" class="sub" value="Submit" name="submit_info">
+                            <?php    
+                          }
+                                  }
+                                }
+                                ?>
                           </form>
                         </div>
                          
