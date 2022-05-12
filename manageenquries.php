@@ -37,30 +37,37 @@
  <div class="pacakge-container"> 
   <h3>Manage Enquries</h3> 
   <div class="table">
-      <table style="width:96%">
+  <table style="width:96%">
+      <tbody>
+      
           <tr>
             <th>S.N</th>
-            <th>Ticket Id</th>
             <th>Name</th>
-            <th>Mobile No/Email</th>
+            <th>Mobile Number</th>
+            <th>Country</th>
             <th>Subject</th>
-            <th>Description</th>
-            <th>Posting Date</th>
             
       
           </tr>
-          <tr>
-            <td>1</td>
-            <td>158 </td>
-            <th>Prasiddha</th>
-            <td>9863144095</td>
-            <td>Return Money</td>
-            <td>I dont want to go tour because i have some problem</td>
-            <th>27th april</th>
-
+          <?php 
+            /* Used to display the serial number of the table. */
+            $i = 1;
            
-            
+            /* Fetching the data from the database and displaying it in the table. */
+            while($row = mysqli_fetch_assoc($res)){
+            ?>
+          <tr>
+            <td scope ="row"> <?php echo $i ?> </td>
+            <td><?php echo $row['fname'] ?><?php echo " " ?><?php echo $row['lname'] ?> </td>
+            <td><?php echo $row['mob_num'] ?></th>
+            <td><?php echo $row['country'] ?></td>
+            <td><?php echo $row['subject'] ?></td> 
           </tr>
+          <?php
+          $i++;
+            }
+          ?>
+          </tbody>
           </table>
   </div>      
     

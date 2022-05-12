@@ -18,7 +18,8 @@ session_start();
 	<link rel="stylesheet" href="admin.css" type="text/css"/>
   <link rel="stylesheet" href="seperates.css" type="text/css"/>
   <link rel="stylesheet" href="createandupdate.css" type="text/css"/>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/cupertino/jquery-ui.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 
@@ -48,7 +49,7 @@ session_start();
  </div>
  
 
-         <div class="container">
+ <div class="container">
                    <div class="tab-content">
               <form action="package.php" class="forms" name="package" method="POST" enctype="multipart/form-data">
                 <h3>Create Package</h3>
@@ -66,6 +67,54 @@ session_start();
                       <input type="text" class="form-text" name="package_type" id="packagetype" placeholder=" Package Type" required>
                     </div>
                 </div>
+
+                <div class="form-group">
+                  <label for="focusedinput" class="tit">Starting Date</label>
+                    <div class="input-text">
+                      <input type="text" class="form-text" name="package_time_start" id="date_picker1" size= 10 placeholder="Calander1" required>
+                    </div>
+                </div>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+      
+      <script>
+$(document).ready(function() {
+///////
+var startDate;
+var endDate;
+ $( "#date_picker1" ).datepicker({
+dateFormat: 'dd-mm-yy'
+})
+///////
+///////
+ $( "#date_picker2" ).datepicker({
+dateFormat: 'dd-mm-yy'
+});
+///////
+/* A jquery function that is called when the datepicker1 is changed. */
+$('#date_picker1').change(function() {
+/* Getting the date from the datepicker. */
+startDate = $(this).datepicker('getDate');
+$("#date_picker2").datepicker("option", "minDate", startDate );
+})
+
+///////
+$('#date_picker2').change(function() {
+endDate = $(this).datepicker('getDate');
+$("#date_picker1").datepicker("option", "maxDate", endDate );
+})
+////////////////
+})
+</script>
+
+
+                <div class="form-group">
+                  <label for="focusedinput" class="tit">Ending Date</label>
+                    <div class="input-text">
+                      <input type="text" class="form-text" name="package_time_end" id="date_picker2" size=10 placeholder="Calander1" required>
+                    </div>
+                </div>
       
                 <div class="form-group">
                   <label for="focusedinput" class="tit">Package Location</label>
@@ -73,7 +122,6 @@ session_start();
                       <input type="text" class="form-text" name="package_location" id="packagelocation" placeholder=" Package Location" required>
                     </div>
                 </div>
-      
                 <div class="form-group">
                   <label for="focusedinput" class="tit">Package Price in NPR</label>
                     <div class="input-text">

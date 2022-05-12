@@ -37,33 +37,39 @@
  <div class="pacakge-container"> 
   <h3>Manage Booking</h3> 
   <div class="table">
-      <table style="width:96%">
+  <table style="width:96%">
           <tr>
             <th>S.N</th>
             <th>Booking ID</th>
-            <th>Name</th>
+            <th>Full Name</th>
             <th>Mobile Number</th>
             <th>Email Id</th>
-            <th>Register Date</th>
-            <th>From</th>
-            <th>To</th>
+            <th>Starting Date</th>
             <th>Comment</th>
             <th>Status</th>
-            <th>Action</th>
           </tr>
+          <?php 
+            /* Used to display the serial number of the table. */
+            $i = 1;
+           
+            /* Fetching the data from the database and displaying it in the table. */
+            while($row = mysqli_fetch_assoc($res)){
+            ?>
           <tr>
             <td>1</td>
-            <td>189</td>
-            <td>Prasiddha</td>
-            <td>9863144095</td>
-            <td>regmisailesh9999@gmail.com</td>
-            <td>20th April</td>
-            <td>27th April</td>
-            <td>29th April</td>
-            <td>Very Good</td>
-            <td>Cancelled by Users</td>
-            <td>Cancelled</td>
+            <td><?php echo $row['fname'] ?></td>
+            <td><?php echo $row['fname'] ?></td>
+            <td><?php echo $row['fname'] ?></td>
+            <td><?php echo $row['fname'] ?></td>
+            <td><?php echo $row['fname'] ?></td>
+            <td><?php echo $row['fname'] ?></td>
+            <td><?php echo $row['fname'] ?></td>
+            <td></td>
           </tr>
+          <?php 
+          $i++;
+            }
+            ?>
           </table>
   </div>      
     

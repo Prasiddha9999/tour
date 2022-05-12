@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('C:\xampp\htdocs\tour\db_conn.php');
+include('D:\Softwares\Xammp\htdocs\tour\db_conn.php');
 $res = mysqli_query($db,"SELECT * FROM create_package");
 ?>
 <!DOCTYPE HTML>
@@ -53,29 +53,39 @@ $res = mysqli_query($db,"SELECT * FROM create_package");
             $i=1;
             /* Fetching the data from the database and displaying it in the table. */
             while($row = mysqli_fetch_assoc($res)){
+                $id = $row['id'];
+                $pacName = $row['pac_name'];
+                $pacFeatures = $row['pac_features'];
+                $pacLocation = $row['pac_location'];
+                $pacPrice = $row['pac_price'];
+                $pacType = $row['pac_type'];
+                $pacTimeStart = $row['pac_time_start'];
+                $pacTimeEnd = $row['pac_time_end'];
+                $pacDescription =$row['pac_detail'];
                
-            ?>
+                echo '
                         
                 <div class="room">
                     <div class="packageimage">
                         <img src="packageimage.png" class="packageimg" alt="">
                     </div>
                     <div class="pacakge-details">
-                        <h4>Package Name: <?php echo $row['pac_name'] ?></h4>
-                        <h6>Package Type : <?php echo $row['pac_type'] ?></h6>
-                        <p><b>Package Location : </b><?php echo $row['pac_location'] ?></p>
-                        <p><b>Features : </b><?php echo $row['pac_features'] ?></p>
+                        <h4>Package Name: '.$pacName.' </h4>
+                        <h5>Booking ID: '.$id.' </h4>
+                        <h6>Package Type : '.$pacType.'</h6>
+                        <p><b>Package Location : '.$pacLocation.'</p>
+                        <p><b>Features : '.$pacFeatures.'</b></p>
                     </div>
                     <div class="prize">
-                        <h5>NPR <?php echo $row['pac_price'] ?></h5>
-                        <a href="mydetail.php" class="view">Details</a>
+                        <h5>'.$pacPrice.' NPR </h5>
+                        <button class="book" name="goto_packages"><a href="mydetail.php?newid='.$id.'" class="text-light">Details</a></button>
                     </div>
-                </div>
+                </div>';
  
             
                
                         
-          <?php 
+ 
 
         /* Used to increment the value of  by 1. */
         $i++;

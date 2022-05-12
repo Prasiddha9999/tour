@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
-include('C:\xampp\htdocs\tour\db_conn.php');
-include('C:\xampp\htdocs\tour\update_user.php');
+include('D:\Softwares\Xammp\htdocs\tour\db_conn.php');
+include('D:\Softwares\Xammp\htdocs\tour\update_user.php');
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -104,7 +104,7 @@ include('C:\xampp\htdocs\tour\update_user.php');
         }
         
         .sub {
-          background-color:  rgb(35, 202, 35);
+          background-color:  rgb(26, 161, 26);
           color: white;
           padding: 12px 20px;
           border: none;
@@ -113,7 +113,7 @@ include('C:\xampp\htdocs\tour\update_user.php');
         }
         
         input[type=submit]:hover {
-          background-color:#28ec32;
+          background-color: rgb(26, 161, 26);
         }
         
         .container {

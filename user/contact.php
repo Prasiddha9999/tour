@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('C:\xampp\htdocs\tour\user_contact.php');
+require('D:\Softwares\Xammp\htdocs\tour\user_contact.php');
 error_reporting(0);
 ?>
 <!DOCTYPE HTML>
@@ -95,7 +95,7 @@ error_reporting(0);
         }
         
         .sub {
-          background-color:  rgb(35, 202, 35);
+          background-color:  rgb(26, 161, 26);
           color: white;
           padding: 12px 20px;
           border: none;
@@ -104,7 +104,7 @@ error_reporting(0);
         }
         
         input[type=submit]:hover {
-          background-color: #28ec32;
+          background-color: rgb(26, 161, 26);
         }
         
         .container {
