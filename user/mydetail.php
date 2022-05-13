@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('D:\Softwares\Xammp\htdocs\tour\db_conn.php');
-include('D:\Softwares\Xammp\htdocs\tour\show_booked_pac.php');
+
 session_start();
 ?>
 <!DOCTYPE HTML>
@@ -14,6 +14,8 @@ session_start();
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/cupertino/jquery-ui.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="header">
@@ -50,6 +52,7 @@ session_start();
 
     <div class="pacakge-container"> 
         <h3>Package Details</h3>  
+        
         <?php
                           $currentPackage = $_GET['newid'];
                           $_SESSION['currentp'] = $currentPackage;
@@ -91,8 +94,71 @@ session_start();
                 <hr>
                 </div>
                 <?php } } } ?>
-                <form action="" method="POST">
-                    <input type="button" class="book" onclick="openForm()" value="Book">
+                
+            <form action="" method="post">
+                  
+            <label for="Bid" class="form">Booking ID</label><br>
+            <input type="text" class="inp" value="<?php echo $_SESSION['currentp']?>" name="b_id" readonly><br>    
+            <label for="Name" class="form">Full Name</label><br>
+            <input type="text" class="inp" placeholder="Full Name" name="b_name" required><br>
+            <label for="Address" class="form">Address</label><br>
+            <input type="text" class="inp" placeholder="Address" name="b_address" required><br>
+            <label for="Mobile Number" class="form">Mobile Number</label><br>
+            <input type="text" class="inp" placeholder="Mobile Number" name="b_num" required><br>
+            <label for="Email Address" class="form">Email Address</label><br>
+            <input type="text" class="inp" placeholder="Email Address" name="b_email" required><br>
+            <label for="No Of Peoples" class="form">Total Numbers of Peoples</label><br>
+            <input type="number" class="inp" placeholder="Enter the Total Numeber of Peoples" name="b_people" required>
+            <label for="Starting Time" class="form">Select Starting Date</label><br>
+            <input type="text" class="inp" name="time_start" id="date_picker1" size= 10 placeholder="Choose Staring Date" required>
+            
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+      
+      <script>
+$(document).ready(function() {
+///////
+var startDate;
+
+ $( "#date_picker1" ).datepicker({
+dateFormat: 'dd-mm-yy'
+})
+
+/* A jquery function that is called when the datepicker1 is changed. */
+$('#date_picker1').change(function() {
+/* Getting the date from the datepicker. */
+startDate = $(this).datepicker('getDate');
+$("#date_picker2").datepicker("option", "minDate", startDate );
+})
+})
+</script>
+            <label for="Comment" class="form">Comment</label><br>
+            <input type="text" class="inp" placeholder="Please Give Detailed information(Optional)" name="b_comment"><br>
+            <button type="submit" class="bookb"  name="book_package" >Book Now</button>
+            <?php
+
+    $uid = $_SESSION['currentp'];
+    if(isset($_POST['book_package'])) {
+    // receive all input values from the form
+    $userName = $_POST['b_name'];
+    $userAddress =$_POST['b_address'];
+    $userNum =$_POST['b_num'];
+    $userEmail =$_POST['b_email'];
+    $userPeople =$_POST['b_people'];
+    $userTime =$_POST['time_start'];
+    $userComment =$_POST['b_comment'];
+
+    $query="INSERT INTO bookedpac(fullname,address,mobilenumber,emailaddress,totalpeople,bookingid,startingdate,comment) VALUES('$userName', '$userAddress', '$userNum', '$userEmail','$userPeople','$uid','$userTime,'$userComment')";
+    mysqli_query($db,$query);
+    header("location:tourpackage.php");
+    
+ 
+
+
+
+}
+?>
+
                     
                 </form>
                   
@@ -102,54 +168,6 @@ session_start();
     </div>
     <div class="footer">© 2022 Neptravels. All Rights Reserved</div>
            
-    
-    <!-- Next overlay -->
-
-    <div id="myOverlay" class="overlay">
-    <form action="" method="POST">
-        
-        <div class="book-form">
-        <span class="closebtn" onclick = "closeForm()" title = "Close Overlay"> &#215 </span>
-        <br><br>
-        <label for="Bid" class="form">Booking ID</label><br>
-        <input type="ID" class="inp" value="<?php echo $_SESSION['currentp']?>" readonly name="b_id"><br>
-        <label for="Uid" class="form">User ID</label><br>
-        <input type="ID" class="inp" value="<?php echo $_SESSION['currenti']?>" readonly name="p_id"><br>     
-        <label for="Name" class="form">Full Name</label><br>
-        <input type="text" class="inp" placeholder="Full Name" name="b_name" required><br>
-        <label for="Address" class="form">Address</label><br>
-        <input type="text" class="inp" placeholder="Address" name="b_address" required><br>
-        <label for="Mobile Number" class="form">Mobile Number</label><br>
-        <input type="text" class="inp" placeholder="Mobile Number" name="b_num" required><br>
-        <label for="Email Address" class="form">Email Address</label><br>
-        <input type="text" class="inp" placeholder="Email Address" name="b_email" required><br>
-        <label for="No Of Peoples" class="form">Total Numbers of Peoples</label><br>
-        <input type="number" class="inp" placeholder="Enter the Total Numeber of Peoples" name="b_people" required>
-        <label for="Starting Time" class="form">Select Starting Date</label><br>
-        <input type="datetime-local" class="inp" name="time_start" id="date_picker1" size= 10 placeholder="Calander1" required>
-        <label for="Comment" class="form">Comment</label><br>
-        <input type="text" class="inp" placeholder="Please Give Detailed information(Optional)" name="b_comment"><br>
-        <p class="bookactive"><?php $_SESSION['book_success'] ?> </p>
-        <input type="submit" class="booka"  name="book_package" value="Book Now"></button>
-        <span><input class="bookb" type="submit" value="Pay Online Now"></span>
-        
-        </form>
-
-        </div>
-        </div>
-    </div>
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-
-    <script>
-function openForm(){
-    document.getElementById("myOverlay").style.display="block";
-}
-</script>
-<script>
-function closeForm(){
-    document.getElementById("myOverlay").style.display="none";
-}
 </script>
 </body>
 </html>

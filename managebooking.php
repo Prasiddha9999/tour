@@ -2,7 +2,7 @@
 
 
 include('db_conn.php');
-$res = mysqli_query($db,"SELECT * FROM booked_pac_info");
+$res = mysqli_query($db,"SELECT * FROM bookedpac");
 ?>
 <!Doctype HTML>
 <html>

@@ -88,12 +88,6 @@ if(empty($pacName) || empty($pacType) || empty($pacLocation)|| empty($pacPrice)|
     if($result > 0){
       while( $result = mysqli_fetch_array($rquerydisplay)){
         ?>
-        <tr>
-        <td><?php echo $result['pac_name']; ?></td>
-        <td><?php echo $result['pac_type'];?></td>
-        <td><?php echo $result['pac_location'];?></td>
-        <td><?php echo $result['pac_price'];?></td>
-        <td><?php echo $result['pac_features'];?></td>
 
         </tr>
         

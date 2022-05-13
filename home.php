@@ -58,7 +58,7 @@ require('error.php');
     <p>Bookings</p>
     <?php
     /* Selecting the id from the signup table and ordering it by id. */
-    $query = "SELECT id FROM booked_pac_info ORDER BY id";
+    $query = "SELECT id FROM bookedpac ORDER BY id";
     $query_run = mysqli_query($db,$query);
 
     $row = mysqli_num_rows($query_run);

@@ -65,7 +65,7 @@ include('D:\Softwares\Xammp\htdocs\tour\update_user.php');
                                     
                                 ?>
                             <label for="id">User Id</label>
-                            <input type="text" id="id" name="id" placeholder="Your id" value="<?php echo $row['id']?>" readonly>
+                            <input type="text" id="id" name="id" placeholder="Your id" value="<?php echo $row['id']; ?>" readonly>
                             <label for="name">Full Name</label>
                             <input type="text" id="name" name="fullname" placeholder="Your Full Name" value="<?php echo $row['username']?>">
                             <label for="address">Address</label>
