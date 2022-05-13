@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('D:\Softwares\Xammp\htdocs\tour\db_conn.php');
+include('C:\xampp\htdocs\tour\db_conn.php');
 
 session_start();
 ?>
@@ -151,23 +151,12 @@ $("#date_picker2").datepicker("option", "minDate", startDate );
     $query="INSERT INTO bookedpac(fullname,address,mobilenumber,emailaddress,totalpeople,bookingid,startingdate,comment) VALUES('$userName', '$userAddress', '$userNum', '$userEmail','$userPeople','$uid','$userTime,'$userComment')";
     mysqli_query($db,$query);
     header("location:tourpackage.php");
-    
- 
-
-
-
 }
-?>
-
-                    
+?>    
                 </form>
-                  
-                
-                </div>  
-                     
+                </div>           
     </div>
-    <div class="footer">© 2022 Neptravels. All Rights Reserved</div>
-           
+    <div class="footer">© 2022 Neptravels. All Rights Reserved</div>   
 </script>
 </body>
 </html>

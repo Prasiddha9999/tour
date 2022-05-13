@@ -13,6 +13,7 @@ session_start();
 <head>
 	<title></title>
 	<link rel="stylesheet" href="admin.css" type="text/css"/>
+  <link rel="stylesheet" href="seperates.css" type="text/css"/>
   <link rel="stylesheet" href="createandupdate.css" type="text/css"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>

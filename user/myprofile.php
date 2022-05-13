@@ -1,7 +1,8 @@
+
 <?php
 error_reporting(0);
-include('D:\Softwares\Xammp\htdocs\tour\db_conn.php');
-include('D:\Softwares\Xammp\htdocs\tour\update_user.php');
+include('C:\xampp\htdocs\tour\db_conn.php');
+include('C:\xampp\htdocs\tour\update_user.php');
 ?>
 <!DOCTYPE HTML>
 <html>

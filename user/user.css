@@ -137,8 +137,8 @@ background-color: rgb(26, 161, 26);
     padding-top: 10px;
 }
 .lista{
-  color:rgb(43, 122, 226);
-  text-decoration: underline;
+    color:rgb(0, 110, 255);
+    text-decoration: none;
 }
 .fake{
     background-color: rgb(254, 254, 255);
