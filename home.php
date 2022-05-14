@@ -16,7 +16,7 @@ require('error.php');
 
 <body>
 	<div id="mySidenav" class="sidenav">
-	<p class="logo"><span>Nep</span>Travel</p>
+	<p class="logo"><span>NepTravels</p>
   <a href="home.php" class="icon-a"><i class="fa fa-dashboard icons"></i> &nbsp;&nbsp;<u>Dashboard</u></a>
   <a href="package.php" class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Create Packages</a>
   <a href="package-list.php"class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Manage Packages</a>
@@ -30,7 +30,7 @@ require('error.php');
   <div class="header">
     <b>Tourism Management System</b>
     <span class="admins">
-      Admin /
+      Admin 
     </span>
     <span class="Logout">
       <a href="index.php">

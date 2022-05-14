@@ -17,7 +17,7 @@ $res = mysqli_query($db,"SELECT * FROM user_contact");
 
 <body>
 	<div id="mySidenav" class="sidenav">
-	<p class="logo"><span>Nep</span>Travel</p>
+	<p class="logo"><span>NepTravels</p>
   <a href="home.php" class="icon-a"><i class="fa fa-dashboard icons"></i> &nbsp;&nbsp;Dashboard</a>
   <a href="package.php" class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Create Packages</a>
   <a href="package-list.php"class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Manage Packages</a>
@@ -31,7 +31,7 @@ $res = mysqli_query($db,"SELECT * FROM user_contact");
   <div class="header">
     <b>Tourism Management System</b>
     <span class="admins">
-      Admin /
+      Admin 
     </span>
     <span class="Logout">
       <a href="index.php">
@@ -98,6 +98,13 @@ $res = mysqli_query($db,"SELECT * FROM user_contact");
       tr:nth-child(even) {
         background-color: #dddddd;
       }
+      h3{
+        color:rgb(26, 161, 26);
+  
+        
+        font-size: 25px;
+      }
+
    
     </style>
 </body>
