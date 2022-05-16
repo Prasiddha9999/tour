@@ -1,0 +1,54 @@
+body{
+	padding: 0px;
+	background-color:#f1f1f1;
+	overflow:hidden;
+	font-family: system-ui;
+}
+.logo{
+	margin: 0px;
+	margin-left: 28px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 30px;
+}
+.logo span{
+  color: #e70101;
+}
+.sidenav {
+  height: 100%;
+  width: 290px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #3f188e;
+  overflow: hidden;
+  transition: 0.5s;
+  padding-top: 30px;
+}
+.sidenav a {
+  padding: 15px 8px 15px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #f1f1f1;
+  display: block;
+  transition: 0.3s;
+}
+.sidenav a:hover {
+  color: #f1f1f1;
+  background-color:#1b203d;
+}
+.sidenav{
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+.container{
+  height:1200px;
+  background-color: rgb(10, 203, 203);
+
+  
+}
+
