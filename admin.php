@@ -17,7 +17,7 @@ require('db_conn.php');
        <img src="https://img.icons8.com/cute-clipart/344/login-rounded-right.png" alt="Login Logo" style="width:100px; height:100px;">
      <div>
          <form action="admin.php" class="myForm" name="myForm" method="POST">
-         <div class="error"><?php include('error.php');?></div>
+         <div class="error"></div>
              <div class="input-container">
                  <i class="fa fa-envelope icon"></i>
                  <input type="email" placeholder="Email" name="admin_name" class="input-field" required="">

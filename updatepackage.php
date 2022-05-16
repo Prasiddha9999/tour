@@ -13,7 +13,6 @@ session_start();
 <head>
 	<title></title>
 	<link rel="stylesheet" href="admin.css" type="text/css"/>
-  <link rel="stylesheet" href="seperates.css" type="text/css"/>
   <link rel="stylesheet" href="createandupdate.css" type="text/css"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -21,7 +20,7 @@ session_start();
 
 <body>
 	<div id="mySidenav" class="sidenav">
-	<p class="logo"><span>NepTravels</p>
+	<p class="logo"><span>Nep</span>Travel</p>
   <a href="home.php" class="icon-a"><i class="fa fa-dashboard icons"></i> &nbsp;&nbsp;Dashboard</a>
   <a href="package.php"class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Create Packages</a>
   <a href="package-list.php"class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Manage Packages</a>
@@ -38,7 +37,7 @@ session_start();
   <div class="header">
     <b>Tourism Management System</b>
     <span class="admins">
-      Admin 
+      Admin /
     </span>
     <span class="Logout">
       <a href="index.php">

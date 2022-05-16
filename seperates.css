@@ -55,7 +55,7 @@ img{
     background-color: darkcyan;
   }  
   a:hover{
-    color: rgb(77, 74, 74);
+    color: rgb(255, 255, 255);
 }
 .icon:hover{
     background-color: darkcyan;
@@ -65,12 +65,9 @@ img{
   color:red;
 
 }
-.btn.btn-danger:hover{
-  color:rgb(152, 19, 19);
-}
 
 .box{
-  border-style:hidden;
+  border-style:groove;
   border-color: #ffffff;
   margin-top:85px;
   height:550px;
@@ -105,10 +102,10 @@ overflow:hidden;
 
 
 .header{
-background-color: rgb(40, 199, 104);
+background-color:#3f188e;
 height:100px;
 width:100%;
-margin-left: 5px;
+margin-left: 34px;
 font-size: 50px;
 text-align: center;
 
@@ -125,13 +122,10 @@ font-size:35px;
 .header>.Logout>a{
 margin-left: 10px; 
 font-size:30px;
-color:#f1f1f1;
-text-decoration: none;
+color:#8083cc;
+text-decoration: underline;
 }
 
-.Logout>a:hover{
-  color: rgb(152, 19, 19);
-}
 
 
 .boxs{

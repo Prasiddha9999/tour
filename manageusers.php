@@ -78,18 +78,18 @@ include('db_conn.php');
             <td><?php echo $row['username'] ?> </td>
             <td><?php echo $row['phonenumber'] ?></td>
             <td><?php echo $row['email'] ?></td>
-            <td> <?php if($row['status']==1){
-              echo 'User Active';
+            <td> <?php if($row['status']==0){
+              echo 'User Banned';
             }
             else{
-              echo 'User Banned';
+              echo 'User Active';
             } ?></td> 
             <td><?php 
             if($row['status']==1){
-              echo '<p><a href="status.php?d_id='.$row['id'].'&status=1">Active</a></p>';
+              echo '<p><a href="status.php?d_id='.$row['id'].'&status=0">Ban User</a></p>';
             }
             else{
-              echo '<p><a href="status.php?d_id='.$row['id'].'&status=0">Deactive</a></p>';
+              echo '<p><a href="status.php?d_id='.$row['id'].'&status=1">Activate user</a></p>';
             } ?></td>
           </tr>
           

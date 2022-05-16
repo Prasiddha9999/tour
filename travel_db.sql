@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2022 at 05:17 PM
+-- Generation Time: May 16, 2022 at 08:13 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.5
 
@@ -55,15 +55,23 @@ CREATE TABLE `bookedpac` (
   `totalpeople` varchar(100) DEFAULT NULL,
   `bookingid` varchar(100) DEFAULT NULL,
   `startingdate` varchar(100) DEFAULT NULL,
-  `comment` varchar(1000) DEFAULT NULL
+  `comment` varchar(1000) DEFAULT NULL,
+  `bookedby` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `bookedpac`
 --
 
-INSERT INTO `bookedpac` (`id`, `fullname`, `address`, `mobilenumber`, `emailaddress`, `totalpeople`, `bookingid`, `startingdate`, `comment`) VALUES
-(1, '[value-2]', '[value-3]', '[value-4]', '[value-5]', '[value-6]', '[value-7]', '[value-8]', '[value-9]');
+INSERT INTO `bookedpac` (`id`, `fullname`, `address`, `mobilenumber`, `emailaddress`, `totalpeople`, `bookingid`, `startingdate`, `comment`, `bookedby`) VALUES
+(17, 'new', 'new', 'newn', 'new@gmail.com', '12', '13', '18-05-2022', 'No Comments', NULL),
+(18, 'nikhil Adhikari', 'Nepal', '9865119469', 'nikadhikari3@gmail.com', '14', '13', '19-05-2022', '', NULL),
+(19, 'k', 'k', 'k', 'k', '5', '11', '24-05-2022', 'No comments', NULL),
+(20, 'nikhil Adhikari', 'Nepal', '9865119469', 'nikadhikari3@gmail.com', '123', '11', '14-05-2022', 'No comments', NULL),
+(21, '123', '123', '123', '123', '123', '13', '19-05-2022', 'No comments', NULL),
+(22, 'nikhil Adhikari', 'Nepal', '9865119469', 'nikadhikari3@gmail.com', '12', 'test@gmail.com', '26-05-2022', 'No comments', 'test@gmail.com'),
+(23, 'asd', 'asd', 'asd', 'asd', '54', 'test@gmail.com', '24-05-2022', 'No comments', 'test@gmail.com'),
+(24, 'asd', 'asd', 'asd', 'asd', '123', 'new@gmail.com', '23-05-2022', 'No comments', 'new@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -191,7 +199,7 @@ ALTER TABLE `admin_login`
 -- AUTO_INCREMENT for table `bookedpac`
 --
 ALTER TABLE `bookedpac`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `create_package`

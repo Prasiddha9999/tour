@@ -1,8 +1,6 @@
 <?php
 session_start();
-include('C:\xampp\htdocs\tour\db_conn.php');
-
-session_start();
+include('D:\Softwares\Xammp\htdocs\tour\db_conn.php');
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -54,8 +52,11 @@ session_start();
         <h3>Package Details</h3>  
         
         <?php
+                          /* This is a query to get the data from the database. */
                           $currentPackage = $_GET['newid'];
+                          /* Storing the current package id in the session variable. */
                           $_SESSION['currentp'] = $currentPackage;
+                          /* This is a query to get the data from the database. */
                           $sql = "SELECT * FROM create_package WHERE id = '$currentPackage'";
                           $gotResult = mysqli_query($db,$sql);
                           if($gotResult){
@@ -95,10 +96,11 @@ session_start();
                 </div>
                 <?php } } } ?>
                 
-            <form action="" method="post">
+            <form action="mydetail.php" method="post">
                   
             <label for="Bid" class="form">Booking ID</label><br>
-            <input type="text" class="inp" value="<?php echo $_SESSION['currentp']?>" name="b_id" readonly><br>    
+            <input type="text" class="inp" value="<?php echo $_SESSION['currentp']?>" name="b_id" readonly><br> 
+            <input type="text" class="inp" value="<?php echo $_SESSION['user_email']?>" name="b_id" readonly><br>   
             <label for="Name" class="form">Full Name</label><br>
             <input type="text" class="inp" placeholder="Full Name" name="b_name" required><br>
             <label for="Address" class="form">Address</label><br>
@@ -136,27 +138,55 @@ $("#date_picker2").datepicker("option", "minDate", startDate );
             <input type="text" class="inp" placeholder="Please Give Detailed information(Optional)" name="b_comment"><br>
             <button type="submit" class="bookb"  name="book_package" >Book Now</button>
             <?php
-
-    $uid = $_SESSION['currentp'];
+    
     if(isset($_POST['book_package'])) {
     // receive all input values from the form
+    // receive all input values from the form
+
+    $u_id = $_SESSION['user_email'];
     $userName = $_POST['b_name'];
+    $userBooking = $_POST['b_id'];
     $userAddress =$_POST['b_address'];
     $userNum =$_POST['b_num'];
     $userEmail =$_POST['b_email'];
     $userPeople =$_POST['b_people'];
     $userTime =$_POST['time_start'];
     $userComment =$_POST['b_comment'];
-
-    $query="INSERT INTO bookedpac(fullname,address,mobilenumber,emailaddress,totalpeople,bookingid,startingdate,comment) VALUES('$userName', '$userAddress', '$userNum', '$userEmail','$userPeople','$uid','$userTime,'$userComment')";
-    mysqli_query($db,$query);
-    header("location:tourpackage.php");
+if(empty($userComment)){
+    $userComment="No comments";
+    $query="INSERT INTO bookedpac(fullname,address,mobilenumber,emailaddress,totalpeople,bookingid,startingdate,comment,bookedby) VALUES('$userName', '$userAddress', '$userNum', '$userEmail','$userPeople','$userBooking','$userTime','$userComment','$u_id')";
+    //echo $query;
+    //echo $userBooking;
+    $query_run = mysqli_query($db,$query);
+    $query_run;
+    echo '<script type = "text/javascript"> alert("Your Booking has been done") </script>';
+    // header("location:logo.php");
 }
-?>    
+else{
+    $query="INSERT INTO bookedpac(fullname,address,mobilenumber,emailaddress,totalpeople,bookingid,startingdate,comment) VALUES('$userName', '$userAddress', '$userNum', '$userEmail','$userPeople','$userBooking','$userTime','$userComment','$u_id')";
+    //echo $query;
+    //echo $userBooking;
+    $query_run = mysqli_query($db,$query);
+    $query_run;
+    echo '<script type = "text/javascript"> alert("Your Booking has been done") </script>';
+}
+    
+ 
+
+
+
+}
+?>
+
+                    
                 </form>
-                </div>           
+                  
+                
+                </div>  
+                     
     </div>
-    <div class="footer">© 2022 Neptravels. All Rights Reserved</div>   
+    <div class="footer">© 2022 Neptravels. All Rights Reserved</div>
+           
 </script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('D:\Softwares\Xammp\htdocs\tour\db_conn.php');
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -51,25 +52,37 @@ session_start();
                             <tr>
                               <th>S.N</th>
                               <th>Booking ID</th>
-                              <th>Pacakge Name</th>
-                              <th>From</th>
-                              <th>To</th>
-                              <th>Status</th>
+                              <th>Fullname</th>
+                              <th>address</th>
+                              <th>mobilenumber</th>
+                              <th>emailaddress</th>
+                              <th>Total People</th>
+                              <th>Starting Date</th>
                               <th>Comment</th>
-                              <th>Booking Date</th>
-                              <th>Action</th>
                             </tr>
+                            <?php 
+                            $currentuser = $_SESSION['user_email'];
+          $res = mysqli_query($db,"SELECT * FROM bookedpac WHERE bookedby='$currentuser'");
+            /* Used to display the serial number of the table. */
+            $i = 1;
+           
+            /* Fetching the data from the database and displaying it in the table. */
+            while($row = mysqli_fetch_assoc($res)){
+            ?>
                             <tr>
-                              <td>1</td>
-                              <td>189</td>
-                              <td>Trip 1</td>
-                              <td>kohalpur</td>
-                              <td>Kathmnadu</td>
-                              <td>Pending</td>
-                              <td>Hello</td>
-                              <td>27rd April</td>
-                              <td>Cancel</td>
-                            </tr>
+                            <td scope ="row"> <?php echo $i ?> </td>
+            <td><?php echo $row['fullname'] ?></th>
+            <td><?php echo $row['addressl'] ?></th>
+            <td><?php echo $row['mobilenumber'] ?><?php echo " " ?><?php echo $row['lname'] ?> </td>
+            <td><?php echo $row['emailaddress'] ?></th>
+            <td><?php echo $row['totalpeople'] ?></td>
+            <td><?php echo $row['bookingid'] ?></td>
+            <td><?php echo $row['startingdate'] ?></td> 
+            <td><?php echo $row['comment'] ?></td>                </tr>
+                            <?php
+          $i++;
+            }
+          ?>
                             </table>
                     </div>      
                       

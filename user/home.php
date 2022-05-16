@@ -1,6 +1,10 @@
 <?php
-include('C:\xampp\htdocs\tour\db_conn.php');
-$res = mysqli_query($db,"SELECT * FROM create_package");
+include('D:\Softwares\Xammp\htdocs\tour\db_conn.php');
+// if(!isset($_SESSION['u_status'])!= true){
+//   header('location:index.php');
+//   die();
+// }
+
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -48,6 +52,7 @@ $res = mysqli_query($db,"SELECT * FROM create_package");
     <div class="pacakge-container"> 
         <h3>Package List</h3>   
             <?php 
+            $res = mysqli_query($db,"SELECT * FROM create_package");
             /* Used to display the serial number of the table. */
             $i = 1;
            
