@@ -1,5 +1,5 @@
 <?php
-include('D:\Softwares\Xammp\htdocs\tour\db_conn.php');
+include('../db_conn.php');
 // if(!isset($_SESSION['u_status'])!= true){
 //   header('location:index.php');
 //   die();

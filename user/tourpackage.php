@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('D:\Softwares\Xammp\htdocs\tour\db_conn.php');
+include('../db_conn.php');
 $res = mysqli_query($db,"SELECT * FROM create_package");
 ?>
 <!DOCTYPE HTML>

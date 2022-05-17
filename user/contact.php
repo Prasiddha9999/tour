@@ -1,7 +1,7 @@
 <?php
 session_start();
-require('D:\Softwares\Xammp\htdocs\tour\user_contact.php');
-require('D:\Softwares\Xammp\htdocs\tour\db_conn.php');
+require('../user_contact.php');
+require('../db_conn.php');
 error_reporting(0);
 ?>
 <!DOCTYPE HTML>

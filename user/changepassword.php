@@ -1,5 +1,5 @@
 <?php
-require('D:\Softwares\Xammp\htdocs\tour\change_pass.php');
+require('../change_pass.php');
 ?>
 <!DOCTYPE HTML>
 <html>
